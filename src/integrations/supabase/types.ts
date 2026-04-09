@@ -14,7 +14,125 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      daily_missions: {
+        Row: {
+          assigned_date: string
+          completed: boolean
+          completed_at: string | null
+          created_at: string
+          difficulty_level: number
+          id: string
+          mission_id: string
+          user_id: string
+          xp_earned: number
+        }
+        Insert: {
+          assigned_date?: string
+          completed?: boolean
+          completed_at?: string | null
+          created_at?: string
+          difficulty_level?: number
+          id?: string
+          mission_id: string
+          user_id: string
+          xp_earned?: number
+        }
+        Update: {
+          assigned_date?: string
+          completed?: boolean
+          completed_at?: string | null
+          created_at?: string
+          difficulty_level?: number
+          id?: string
+          mission_id?: string
+          user_id?: string
+          xp_earned?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "daily_missions_mission_id_fkey"
+            columns: ["mission_id"]
+            isOneToOne: false
+            referencedRelation: "missions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      missions: {
+        Row: {
+          base_difficulty: number
+          category: string
+          created_at: string
+          description: string
+          icon: string
+          id: string
+          title: string
+          xp_reward: number
+        }
+        Insert: {
+          base_difficulty?: number
+          category: string
+          created_at?: string
+          description: string
+          icon?: string
+          id?: string
+          title: string
+          xp_reward?: number
+        }
+        Update: {
+          base_difficulty?: number
+          category?: string
+          created_at?: string
+          description?: string
+          icon?: string
+          id?: string
+          title?: string
+          xp_reward?: number
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          current_day: number
+          current_streak: number
+          display_name: string | null
+          id: string
+          last_completion_date: string | null
+          longest_streak: number
+          total_xp: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          current_day?: number
+          current_streak?: number
+          display_name?: string | null
+          id?: string
+          last_completion_date?: string | null
+          longest_streak?: number
+          total_xp?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          current_day?: number
+          current_streak?: number
+          display_name?: string | null
+          id?: string
+          last_completion_date?: string | null
+          longest_streak?: number
+          total_xp?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
