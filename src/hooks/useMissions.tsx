@@ -108,15 +108,17 @@ export const useMissions = () => {
       ? (wasYesterday || isNewDay ? profile.current_streak + 1 : profile.current_streak)
       : profile.current_streak;
 
-    const updates: Record<string, unknown> = {
-      total_xp: newXp,
-    };
+    const updates = allDone
+      ? {
+          total_xp: newXp,
+          current_streak: newStreak,
+          longest_streak: Math.max(newStreak, profile.longest_streak),
+          last_completion_date: today,
+          current_day: profile.current_day + 1,
+        }
+      : { total_xp: newXp };
 
     if (allDone) {
-      updates.current_streak = newStreak;
-      updates.longest_streak = Math.max(newStreak, profile.longest_streak);
-      updates.last_completion_date = today;
-      updates.current_day = profile.current_day + 1;
       toast.success('🔥 All missions complete! Streak updated!');
     } else {
       toast.success(`+${xpEarned} XP earned!`);
