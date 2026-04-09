@@ -1,18 +1,25 @@
-import { motion } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
+import { useTheme } from '@/hooks/useTheme';
 import StreakBadge from '@/components/StreakBadge';
 import ProgressRing from '@/components/ProgressRing';
 import MissionCard from '@/components/MissionCard';
 import AIMotivator from '@/components/AIMotivator';
 import AchievementBadges from '@/components/AchievementBadges';
+import WelcomeTutorial from '@/components/WelcomeTutorial';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const Dashboard = () => {
   const { user, signOut } = useAuth();
   const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent } = useMissions();
+  const { theme, toggleTheme } = useTheme();
+  const [showTutorial, setShowTutorial] = useState(
+    () => !localStorage.getItem('questup_onboarding_complete')
+  );
 
   if (loading || !profile) {
     return (
@@ -32,6 +39,10 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <AnimatePresence>
+        {showTutorial && <WelcomeTutorial onComplete={() => setShowTutorial(false)} />}
+      </AnimatePresence>
+
       <div className="max-w-2xl mx-auto p-4 sm:p-6 pb-24 space-y-6">
         {/* Header */}
         <motion.div
@@ -50,9 +61,14 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground">Day {profile.current_day} of your journey</p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground">
-            <LogOut size={20} />
-          </Button>
+          <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground">
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </Button>
+            <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground">
+              <LogOut size={20} />
+            </Button>
+          </div>
         </motion.div>
 
         {/* Stats row */}
@@ -85,13 +101,8 @@ const Dashboard = () => {
           </div>
         </motion.div>
 
-        {/* Streak Badge */}
         <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} />
-
-        {/* Achievement Badges */}
         <AchievementBadges longestStreak={profile.longest_streak} currentStreak={profile.current_streak} />
-
-        {/* Progress Ring */}
         <ProgressRing percent={progressPercent} completed={completedCount} total={totalCount} />
 
         {/* Daily Missions */}
@@ -105,7 +116,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* AI Motivator */}
       <AIMotivator
         streak={profile.current_streak}
         completedMissions={completedCount}
