@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
-import { Flame, BookOpen, Dumbbell, Sparkles } from 'lucide-react';
+import { Flame, BookOpen, Dumbbell, Sparkles, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,6 +13,7 @@ const Auth = () => {
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [loading, setLoading] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +38,17 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4 relative">
+      {/* Theme toggle */}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={toggleTheme}
+        className="absolute top-4 right-4 text-muted-foreground z-10"
+      >
+        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+      </Button>
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-20 left-10 text-primary/20"

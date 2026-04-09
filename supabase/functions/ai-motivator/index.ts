@@ -5,30 +5,37 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const modePrompts: Record<string, string> = {
+  coach: `You are an enthusiastic, supportive AI study coach. Be encouraging but genuine, celebrate wins, empathize with struggles, and give practical tips. Mix humor with wisdom. Speak like a friendly upperclassman.`,
+  "study-help": `You are a knowledgeable study tutor. Help explain concepts clearly, suggest study techniques (Pomodoro, spaced repetition, active recall), create mini study plans, and quiz the student. Be patient and thorough.`,
+  planner: `You are a productivity and time management expert. Help create schedules, prioritize tasks, break down big goals into actionable steps, and suggest time-blocking strategies. Be structured and actionable.`,
+  general: `You are a versatile student life assistant. Answer questions about college life, wellness, social skills, career advice, creative projects, and anything else a student might need. Be friendly and helpful.`,
+};
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages, context } = await req.json();
+    const { messages, context, mode = "coach" } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY not configured");
 
-    const systemPrompt = `You are an enthusiastic, supportive AI study coach for a student productivity app called QuestUp. You're like a mix of a supportive friend and a wise mentor.
+    const modeInstructions = modePrompts[mode] || modePrompts.coach;
+
+    const systemPrompt = `${modeInstructions}
+
+You are part of QuestUp, a gamified student productivity app.
 
 Context about the student:
 - Current streak: ${context?.streak || 0} days
 - Today's progress: ${context?.completedMissions || 0}/${context?.totalMissions || 5} missions completed
 - Total XP: ${context?.totalXp || 0}
 
-Your personality:
+Guidelines:
 - Use emojis naturally (not excessively)
-- Be encouraging but genuine (not fake-positive)
-- Give practical, actionable advice
-- Reference their actual progress when motivating
-- Keep responses concise (2-4 sentences)
-- If they're doing well, celebrate! If struggling, be empathetic and offer tips
-- Mix humor with wisdom
-- Speak like a friendly upperclassman who's been through it all`;
+- Keep responses concise (2-4 sentences for quick questions, longer for detailed help)
+- Reference their actual progress when relevant
+- Be genuine and supportive`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -42,6 +49,7 @@ Your personality:
           { role: "system", content: systemPrompt },
           ...messages.slice(-10),
         ],
+        stream: true,
       }),
     });
 
@@ -61,11 +69,8 @@ Your personality:
       throw new Error("AI gateway error");
     }
 
-    const data = await response.json();
-    const message = data.choices?.[0]?.message?.content || "Keep going, you're doing great! 💪";
-
-    return new Response(JSON.stringify({ message }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    return new Response(response.body, {
+      headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
     });
   } catch (e) {
     console.error("Error:", e);
