@@ -6,6 +6,7 @@ import StreakBadge from '@/components/StreakBadge';
 import ProgressRing from '@/components/ProgressRing';
 import MissionCard from '@/components/MissionCard';
 import AIMotivator from '@/components/AIMotivator';
+import AchievementBadges from '@/components/AchievementBadges';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -86,6 +87,9 @@ const Dashboard = () => {
 
         {/* Streak Badge */}
         <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} />
+
+        {/* Achievement Badges */}
+        <AchievementBadges longestStreak={profile.longest_streak} currentStreak={profile.current_streak} />
 
         {/* Progress Ring */}
         <ProgressRing percent={progressPercent} completed={completedCount} total={totalCount} />
