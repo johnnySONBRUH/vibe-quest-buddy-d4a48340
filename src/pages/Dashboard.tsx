@@ -67,6 +67,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground">
+              <BarChart3 size={20} />
+            </Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
