@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
 import { useTheme } from '@/hooks/useTheme';
@@ -10,6 +10,7 @@ import MissionCard from '@/components/MissionCard';
 import AIMotivator from '@/components/AIMotivator';
 import AchievementBadges from '@/components/AchievementBadges';
 import WelcomeTutorial from '@/components/WelcomeTutorial';
+import Progress from '@/pages/Progress';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
