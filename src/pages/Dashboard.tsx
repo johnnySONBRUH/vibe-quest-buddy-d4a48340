@@ -21,7 +21,11 @@ const Dashboard = () => {
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
   );
+  const [showProgress, setShowProgress] = useState(false);
 
+  if (showProgress) {
+    return <Progress onBack={() => setShowProgress(false)} />;
+  }
   if (loading || !profile) {
     return (
       <div className="min-h-screen bg-background p-6 max-w-2xl mx-auto space-y-6">
