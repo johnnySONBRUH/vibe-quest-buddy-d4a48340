@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
 import { useTheme } from '@/hooks/useTheme';
@@ -10,6 +10,7 @@ import MissionCard from '@/components/MissionCard';
 import AIMotivator from '@/components/AIMotivator';
 import AchievementBadges from '@/components/AchievementBadges';
 import WelcomeTutorial from '@/components/WelcomeTutorial';
+import Progress from '@/pages/Progress';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -20,7 +21,11 @@ const Dashboard = () => {
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
   );
+  const [showProgress, setShowProgress] = useState(false);
 
+  if (showProgress) {
+    return <Progress onBack={() => setShowProgress(false)} />;
+  }
   if (loading || !profile) {
     return (
       <div className="min-h-screen bg-background p-6 max-w-2xl mx-auto space-y-6">
@@ -62,6 +67,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground">
+              <BarChart3 size={20} />
+            </Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
