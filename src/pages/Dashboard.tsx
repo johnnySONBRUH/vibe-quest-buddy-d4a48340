@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
 import { useTheme } from '@/hooks/useTheme';
@@ -13,6 +13,7 @@ import WelcomeTutorial from '@/components/WelcomeTutorial';
 import DailyQuote from '@/components/DailyQuote';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
+import Leaderboard from '@/pages/Leaderboard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -25,7 +26,11 @@ const Dashboard = () => {
   );
   const [showProgress, setShowProgress] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
+  if (showLeaderboard) {
+    return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
+  }
   if (showHistory) {
     return <MissionHistory onBack={() => setShowHistory(false)} />;
   }
@@ -73,6 +78,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground">
+              <Crown size={20} />
+            </Button>
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground">
               <History size={20} />
             </Button>
