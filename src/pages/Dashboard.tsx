@@ -78,6 +78,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground">
+              <Crown size={20} />
+            </Button>
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground">
               <History size={20} />
             </Button>
