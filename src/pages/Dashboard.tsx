@@ -10,6 +10,7 @@ import MissionCard from '@/components/MissionCard';
 import AIMotivator from '@/components/AIMotivator';
 import AchievementBadges from '@/components/AchievementBadges';
 import WelcomeTutorial from '@/components/WelcomeTutorial';
+import DailyQuote from '@/components/DailyQuote';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
 import { Button } from '@/components/ui/button';
@@ -119,6 +120,7 @@ const Dashboard = () => {
 
         <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} />
         <AchievementBadges longestStreak={profile.longest_streak} currentStreak={profile.current_streak} />
+        <DailyQuote />
         <ProgressRing percent={progressPercent} completed={completedCount} total={totalCount} />
 
         {/* Daily Missions */}
