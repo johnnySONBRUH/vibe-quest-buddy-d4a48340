@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
 import { useTheme } from '@/hooks/useTheme';
