@@ -13,6 +13,7 @@ import WelcomeTutorial from '@/components/WelcomeTutorial';
 import DailyQuote from '@/components/DailyQuote';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
+import Leaderboard from '@/pages/Leaderboard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
