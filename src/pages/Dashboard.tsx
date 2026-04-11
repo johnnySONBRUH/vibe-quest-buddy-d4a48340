@@ -26,7 +26,11 @@ const Dashboard = () => {
   );
   const [showProgress, setShowProgress] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
+  if (showLeaderboard) {
+    return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
+  }
   if (showHistory) {
     return <MissionHistory onBack={() => setShowHistory(false)} />;
   }
