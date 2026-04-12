@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Camera, User, Bell, BellOff, Save, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -30,8 +30,7 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
   const [uploading, setUploading] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  // Load profile on mount
-  useState(() => {
+  useEffect(() => {
     if (!user) return;
     supabase
       .from('profiles')
@@ -48,7 +47,7 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
           setLoaded(true);
         }
       });
-  });
+  }, [user]);
 
   const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
