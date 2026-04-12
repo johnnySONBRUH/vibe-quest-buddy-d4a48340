@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown, Settings } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
 import { useTheme } from '@/hooks/useTheme';
@@ -14,6 +14,7 @@ import DailyQuote from '@/components/DailyQuote';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
 import Leaderboard from '@/pages/Leaderboard';
+import ProfileSettings from '@/pages/ProfileSettings';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -27,7 +28,11 @@ const Dashboard = () => {
   const [showProgress, setShowProgress] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
+  if (showSettings) {
+    return <ProfileSettings onBack={() => setShowSettings(false)} />;
+  }
   if (showLeaderboard) {
     return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
   }
@@ -89,6 +94,9 @@ const Dashboard = () => {
             </Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </Button>
+            <Button variant="ghost" size="icon" onClick={() => setShowSettings(true)} className="text-muted-foreground">
+              <Settings size={20} />
             </Button>
             <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground">
               <LogOut size={20} />
