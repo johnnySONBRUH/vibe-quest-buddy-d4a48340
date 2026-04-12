@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
+import ShareButton from '@/components/ShareButton';
 
 interface LeaderboardEntry {
   display_name: string;
@@ -64,6 +65,9 @@ const Leaderboard = ({ onBack }: { onBack: () => void }) => {
           <div className="space-y-2">
             {entries.map((entry, i) => {
               const isMe = entry.user_id === user?.id;
+              const shareText = isMe
+                ? `🏆 I'm ranked #${i + 1} on QuestUp with ${entry.total_xp} XP and a ${entry.current_streak}-day streak! Can you beat me?`
+                : '';
               return (
                 <motion.div
                   key={entry.user_id}
@@ -88,9 +92,12 @@ const Leaderboard = ({ onBack }: { onBack: () => void }) => {
                       <span className="flex items-center gap-1"><Flame size={12} /> {entry.current_streak} streak</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-lg font-bold text-foreground">{entry.total_xp}</p>
-                    <p className="text-xs text-muted-foreground">XP</p>
+                  <div className="flex items-center gap-2">
+                    {isMe && <ShareButton text={shareText} title="My QuestUp Rank" />}
+                    <div className="text-right">
+                      <p className="text-lg font-bold text-foreground">{entry.total_xp}</p>
+                      <p className="text-xs text-muted-foreground">XP</p>
+                    </div>
                   </div>
                 </motion.div>
               );

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Lock, Star, Flame, Crown, Rocket, Target, Gem, Sparkles } from 'lucide-react';
+import ShareButton from '@/components/ShareButton';
 
 interface Milestone {
   days: number;
@@ -26,6 +27,10 @@ interface AchievementBadgesProps {
 
 const AchievementBadges = ({ longestStreak, currentStreak }: AchievementBadgesProps) => {
   const unlockedCount = milestones.filter(m => longestStreak >= m.days).length;
+  const unlockedNames = milestones.filter(m => longestStreak >= m.days).map(m => m.label);
+  const shareText = unlockedCount > 0
+    ? `🎖️ I've unlocked ${unlockedCount}/${milestones.length} achievements on QuestUp: ${unlockedNames.join(', ')}! My streak: ${currentStreak} days 🔥`
+    : `🎯 Starting my QuestUp journey! ${milestones.length} achievements to unlock. Let's go!`;
 
   return (
     <motion.div
@@ -40,6 +45,7 @@ const AchievementBadges = ({ longestStreak, currentStreak }: AchievementBadgesPr
         <span className="ml-auto text-xs font-medium text-muted-foreground">
           {unlockedCount}/{milestones.length} unlocked
         </span>
+        <ShareButton text={shareText} title="My QuestUp Achievements" />
       </div>
 
       <div className="grid grid-cols-4 sm:grid-cols-7 gap-3">
