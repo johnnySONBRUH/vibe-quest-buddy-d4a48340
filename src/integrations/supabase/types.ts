@@ -101,6 +101,7 @@ export type Database = {
           id: string
           last_completion_date: string | null
           longest_streak: number
+          notification_preferences: Json
           total_xp: number
           updated_at: string
           user_id: string
@@ -114,6 +115,7 @@ export type Database = {
           id?: string
           last_completion_date?: string | null
           longest_streak?: number
+          notification_preferences?: Json
           total_xp?: number
           updated_at?: string
           user_id: string
@@ -127,6 +129,7 @@ export type Database = {
           id?: string
           last_completion_date?: string | null
           longest_streak?: number
+          notification_preferences?: Json
           total_xp?: number
           updated_at?: string
           user_id?: string
