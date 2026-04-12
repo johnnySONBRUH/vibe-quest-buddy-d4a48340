@@ -90,7 +90,7 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
       .update({
         display_name: trimmed,
         avatar_url: avatarUrl,
-        notification_preferences: notifications as unknown as Record<string, unknown>,
+        notification_preferences: notifications as unknown as import('@/integrations/supabase/types').Json,
       })
       .eq('user_id', user.id);
 
