@@ -1,0 +1,17 @@
+{
+  "app": { "name": "QuestUp", "tagline": "提升你的学生生活" },
+  "auth": { "signIn": "登录", "signUp": "注册", "email": "邮箱", "password": "密码", "displayName": "显示名称", "yourName": "你的名字", "loading": "加载中...", "createAccount": "创建账户", "checkEmail": "请检查邮箱以确认您的账户！" },
+  "dashboard": { "hey": "嘿，{{name}}！👋", "dayOfJourney": "旅程第 {{day}} 天", "level": "Lv {{level}}", "totalXp": "总经验", "streak": "连续天数", "todaysMissions": "今日任务" },
+  "streakBadge": { "currentStreak": "当前连续", "days": "天", "best": "最佳：{{count}} 天" },
+  "progressRing": { "done": "完成", "todaysProgress": "今日进度", "missionsComplete": "已完成 {{completed}}/{{total}} 个任务", "allDone": "🎉 全部完成！太棒了！" },
+  "achievements": { "title": "成就", "unlocked": "{{count}}/{{total}} 已解锁", "unlockedTooltip": "✅ 已解锁！", "daysToGo": "还差 {{count}} 天", "starter": "新手", "weekWarrior": "周勇士", "committed": "坚持者", "monthlyMaster": "月度大师", "unstoppable": "不可阻挡", "centurion": "百日勇士", "legend": "传奇" },
+  "progress": { "title": "每周进度", "subtitle": "过去7天概览", "missions": "任务", "xpEarned": "获得经验", "completion": "完成率", "missionCompletions": "任务完成情况", "streakHistory": "连续记录", "today": "今天", "yesterday": "昨天" },
+  "history": { "title": "任务历史", "missionsCompleted": "已完成 {{count}} 个任务", "completed": "已完成", "xpEarned": "获得经验", "topCategory": "最佳类别", "all": "全部", "noMissions": "还没有完成的任务", "noMissionsDesc": "完成每日任务就能在这里看到它们！" },
+  "leaderboard": { "title": "排行榜", "subtitle": "本赛季顶尖学生", "you": "你", "xp": "经验", "streakDays": "{{count}}天连续" },
+  "settings": { "title": "个人设置", "avatarHint": "点击更换头像（最大2MB）", "displayName": "显示名称", "notifications": "通知", "dailyReminders": "每日提醒", "dailyRemindersDesc": "提醒你完成任务", "streakWarnings": "连续提醒", "streakWarningsDesc": "当连续记录有风险时提醒", "achievementsNotif": "成就通知", "achievementsNotifDesc": "解锁徽章时庆祝", "save": "保存更改", "saved": "已保存！✨", "saveFailed": "保存失败", "fileTooLarge": "文件太大", "fileTooLargeDesc": "请选择2MB以下的图片。", "uploadFailed": "上传失败", "avatarUploaded": "头像已上传！", "invalidName": "无效名称", "invalidNameDesc": "显示名称必须为1-50个字符。", "language": "语言", "languageDesc": "选择你偏好的语言" },
+  "tutorial": { "welcome": "欢迎来到 QuestUp！🎮", "welcomeDesc": "你的学生生活即将升级。完成每日任务，赚取经验，建立连续记录，成为最好的自己。", "missions": "每日任务 🎯", "missionsDesc": "每天你会获得涵盖学习、运动、社交、创意和健康类别的新任务。难度会随着你的成长而逐渐提升。", "streaks": "连续与成就 🏆", "streaksDesc": "每天完成任务来建立连续记录。在7天、30天和100天达到里程碑，解锁成就徽章！", "ai": "你的AI伙伴 🤖", "aiDesc": "QuestUp AI是你的私人教练、学习助手、规划师和啦啦队。问它任何事——从学习技巧到锻炼建议！", "getStarted": "开始吧！🚀", "next": "下一步", "back": "返回", "skip": "跳过教程" },
+  "ai": { "title": "QuestUp AI", "coach": "教练", "study": "学习", "planner": "规划", "general": "通用", "placeholder": "问 QuestUp AI...", "greeting": "嘿！我是你的 QuestUp AI。试着问我点什么！", "fallback": "继续加油，你做得很棒！💪", "error": "连接遇到问题。继续加油！💪" },
+  "quote": { "newQuote": "换一条" },
+  "categories": { "study": "学习", "exercise": "运动", "social": "社交", "creative": "创意", "wellness": "健康" },
+  "mission": { "level": "Lv {{level}}", "xp": "经验" }
+}

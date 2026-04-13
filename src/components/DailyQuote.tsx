@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Quote, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const quotes = [
   { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
@@ -44,9 +45,9 @@ const getDailyIndex = () => {
 };
 
 const DailyQuote = () => {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(getDailyIndex);
   const [animKey, setAnimKey] = useState(0);
-
   const quote = quotes[index];
 
   const shuffle = () => {
@@ -57,17 +58,9 @@ const DailyQuote = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="glass-card rounded-2xl p-4 relative overflow-hidden"
-    >
+    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-4 relative overflow-hidden">
       <div className="absolute top-3 right-3">
-        <button
-          onClick={shuffle}
-          className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-          aria-label="New quote"
-        >
+        <button onClick={shuffle} className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors" aria-label={t('quote.newQuote')}>
           <RefreshCw size={14} />
         </button>
       </div>
@@ -76,13 +69,7 @@ const DailyQuote = () => {
           <Quote size={16} className="text-primary" />
         </div>
         <AnimatePresence mode="wait">
-          <motion.div
-            key={animKey}
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.2 }}
-          >
+          <motion.div key={animKey} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} transition={{ duration: 0.2 }}>
             <p className="text-sm text-foreground italic leading-relaxed">"{quote.text}"</p>
             <p className="text-xs text-muted-foreground mt-1.5">— {quote.author}</p>
           </motion.div>

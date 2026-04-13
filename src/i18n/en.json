@@ -1,0 +1,139 @@
+{
+  "app": {
+    "name": "QuestUp",
+    "tagline": "Level up your student life"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Display Name",
+    "yourName": "Your name",
+    "loading": "Loading...",
+    "createAccount": "Create Account",
+    "checkEmail": "Check your email to confirm your account!"
+  },
+  "dashboard": {
+    "hey": "Hey, {{name}}! 👋",
+    "dayOfJourney": "Day {{day}} of your journey",
+    "level": "Lvl {{level}}",
+    "totalXp": "Total XP",
+    "streak": "Streak",
+    "todaysMissions": "Today's Missions"
+  },
+  "streakBadge": {
+    "currentStreak": "Current Streak",
+    "days": "days",
+    "best": "Best: {{count}} days"
+  },
+  "progressRing": {
+    "done": "done",
+    "todaysProgress": "Today's Progress",
+    "missionsComplete": "{{completed}} of {{total}} missions complete",
+    "allDone": "🎉 All done! Amazing work!"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "unlocked": "{{count}}/{{total}} unlocked",
+    "unlockedTooltip": "✅ Unlocked!",
+    "daysToGo": "{{count}} days to go",
+    "starter": "Starter",
+    "weekWarrior": "Week Warrior",
+    "committed": "Committed",
+    "monthlyMaster": "Monthly Master",
+    "unstoppable": "Unstoppable",
+    "centurion": "Centurion",
+    "legend": "Legend"
+  },
+  "progress": {
+    "title": "Weekly Progress",
+    "subtitle": "Your last 7 days at a glance",
+    "missions": "Missions",
+    "xpEarned": "XP Earned",
+    "completion": "Completion",
+    "missionCompletions": "Mission Completions",
+    "streakHistory": "Streak History",
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "history": {
+    "title": "Mission History",
+    "missionsCompleted": "{{count}} missions completed",
+    "completed": "Completed",
+    "xpEarned": "XP Earned",
+    "topCategory": "Top Category",
+    "all": "All",
+    "noMissions": "No completed missions yet",
+    "noMissionsDesc": "Complete your daily missions to see them here!"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Top students this season",
+    "you": "You",
+    "xp": "XP",
+    "streakDays": "{{count}}d streak"
+  },
+  "settings": {
+    "title": "Profile Settings",
+    "avatarHint": "Tap to change avatar (max 2MB)",
+    "displayName": "Display Name",
+    "notifications": "Notifications",
+    "dailyReminders": "Daily Reminders",
+    "dailyRemindersDesc": "Get reminded to complete your missions",
+    "streakWarnings": "Streak Warnings",
+    "streakWarningsDesc": "Alert when your streak is at risk",
+    "achievementsNotif": "Achievements",
+    "achievementsNotifDesc": "Celebrate when you unlock badges",
+    "save": "Save Changes",
+    "saved": "Profile saved! ✨",
+    "saveFailed": "Save failed",
+    "fileTooLarge": "File too large",
+    "fileTooLargeDesc": "Please choose an image under 2MB.",
+    "uploadFailed": "Upload failed",
+    "avatarUploaded": "Avatar uploaded!",
+    "invalidName": "Invalid name",
+    "invalidNameDesc": "Display name must be 1-50 characters.",
+    "language": "Language",
+    "languageDesc": "Choose your preferred language"
+  },
+  "tutorial": {
+    "welcome": "Welcome to QuestUp! 🎮",
+    "welcomeDesc": "Your student life is about to level up. Complete daily missions, earn XP, and build streaks to become the best version of yourself.",
+    "missions": "Daily Missions 🎯",
+    "missionsDesc": "Every day you get fresh missions across Study, Exercise, Social, Creative, and Wellness categories. Difficulty scales gently as you grow stronger.",
+    "streaks": "Streaks & Achievements 🏆",
+    "streaksDesc": "Complete missions daily to build your streak. Hit milestones at 7, 30, and 100 days to unlock achievement badges and bragging rights!",
+    "ai": "Your AI Companion 🤖",
+    "aiDesc": "QuestUp AI is your personal coach, study helper, planner, and cheerleader. Ask it anything — from study tips to workout ideas!",
+    "getStarted": "Get Started! 🚀",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip tutorial"
+  },
+  "ai": {
+    "title": "QuestUp AI",
+    "coach": "Coach",
+    "study": "Study",
+    "planner": "Planner",
+    "general": "General",
+    "placeholder": "Ask QuestUp AI...",
+    "greeting": "Hey! I'm your QuestUp AI. Try asking me something!",
+    "fallback": "Keep going, you're doing great! 💪",
+    "error": "I'm having trouble connecting right now. Keep pushing forward! 💪"
+  },
+  "quote": {
+    "newQuote": "New quote"
+  },
+  "categories": {
+    "study": "Study",
+    "exercise": "Exercise",
+    "social": "Social",
+    "creative": "Creative",
+    "wellness": "Wellness"
+  },
+  "mission": {
+    "level": "Lvl {{level}}",
+    "xp": "XP"
+  }
+}

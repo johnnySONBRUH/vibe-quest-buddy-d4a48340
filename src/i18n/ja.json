@@ -1,0 +1,17 @@
+{
+  "app": { "name": "QuestUp", "tagline": "学生生活をレベルアップ" },
+  "auth": { "signIn": "ログイン", "signUp": "新規登録", "email": "メール", "password": "パスワード", "displayName": "表示名", "yourName": "あなたの名前", "loading": "読み込み中...", "createAccount": "アカウント作成", "checkEmail": "メールを確認してアカウントを認証してください！" },
+  "dashboard": { "hey": "やあ、{{name}}！👋", "dayOfJourney": "旅の{{day}}日目", "level": "Lv {{level}}", "totalXp": "合計XP", "streak": "連続", "todaysMissions": "今日のミッション" },
+  "streakBadge": { "currentStreak": "現在の連続", "days": "日", "best": "最高：{{count}}日" },
+  "progressRing": { "done": "完了", "todaysProgress": "今日の進捗", "missionsComplete": "{{total}}中{{completed}}ミッション完了", "allDone": "🎉 全て完了！素晴らしい！" },
+  "achievements": { "title": "実績", "unlocked": "{{count}}/{{total}} 解除", "unlockedTooltip": "✅ 解除済み！", "daysToGo": "あと{{count}}日", "starter": "スターター", "weekWarrior": "ウィークウォリアー", "committed": "コミッテッド", "monthlyMaster": "マンスリーマスター", "unstoppable": "アンストッパブル", "centurion": "センチュリオン", "legend": "レジェンド" },
+  "progress": { "title": "週間進捗", "subtitle": "過去7日間の概要", "missions": "ミッション", "xpEarned": "獲得XP", "completion": "完了率", "missionCompletions": "ミッション完了数", "streakHistory": "連続履歴", "today": "今日", "yesterday": "昨日" },
+  "history": { "title": "ミッション履歴", "missionsCompleted": "{{count}}ミッション完了", "completed": "完了", "xpEarned": "獲得XP", "topCategory": "トップカテゴリ", "all": "全て", "noMissions": "完了したミッションはまだありません", "noMissionsDesc": "デイリーミッションを完了するとここに表示されます！" },
+  "leaderboard": { "title": "リーダーボード", "subtitle": "今シーズンのトップ学生", "you": "あなた", "xp": "XP", "streakDays": "{{count}}日連続" },
+  "settings": { "title": "プロフィール設定", "avatarHint": "タップしてアバターを変更（最大2MB）", "displayName": "表示名", "notifications": "通知", "dailyReminders": "毎日のリマインダー", "dailyRemindersDesc": "ミッション完了のリマインダー", "streakWarnings": "連続警告", "streakWarningsDesc": "連続が途切れそうな時に通知", "achievementsNotif": "実績通知", "achievementsNotifDesc": "バッジ解除時にお祝い", "save": "変更を保存", "saved": "プロフィール保存済み！✨", "saveFailed": "保存失敗", "fileTooLarge": "ファイルが大きすぎます", "fileTooLargeDesc": "2MB以下の画像を選択してください。", "uploadFailed": "アップロード失敗", "avatarUploaded": "アバターアップロード済み！", "invalidName": "無効な名前", "invalidNameDesc": "表示名は1〜50文字にしてください。", "language": "言語", "languageDesc": "お好みの言語を選択してください" },
+  "tutorial": { "welcome": "QuestUpへようこそ！🎮", "welcomeDesc": "学生生活がレベルアップします。デイリーミッションを完了し、XPを獲得し、連続記録を築いて最高の自分になりましょう。", "missions": "デイリーミッション 🎯", "missionsDesc": "毎日、学習、運動、社交、クリエイティブ、ウェルネスのカテゴリから新しいミッションが届きます。", "streaks": "連続＆実績 🏆", "streaksDesc": "毎日ミッションを完了して連続記録を築きましょう。7日、30日、100日でバッジを解除！", "ai": "AIコンパニオン 🤖", "aiDesc": "QuestUp AIはあなたの個人コーチ、学習アシスタント、プランナーです。", "getStarted": "始めよう！🚀", "next": "次へ", "back": "戻る", "skip": "チュートリアルをスキップ" },
+  "ai": { "title": "QuestUp AI", "coach": "コーチ", "study": "学習", "planner": "プランナー", "general": "一般", "placeholder": "QuestUp AIに聞く...", "greeting": "やあ！QuestUp AIです。何でも聞いてね！", "fallback": "頑張れ、よくやってるよ！💪", "error": "接続に問題があります。頑張り続けて！💪" },
+  "quote": { "newQuote": "新しい名言" },
+  "categories": { "study": "学習", "exercise": "運動", "social": "社交", "creative": "クリエイティブ", "wellness": "ウェルネス" },
+  "mission": { "level": "Lv {{level}}", "xp": "XP" }
+}
