@@ -1,0 +1,17 @@
+{
+  "app": { "name": "QuestUp", "tagline": "학생 생활을 레벨업하세요" },
+  "auth": { "signIn": "로그인", "signUp": "회원가입", "email": "이메일", "password": "비밀번호", "displayName": "표시 이름", "yourName": "이름", "loading": "로딩 중...", "createAccount": "계정 만들기", "checkEmail": "이메일을 확인하여 계정을 인증하세요!" },
+  "dashboard": { "hey": "안녕, {{name}}! 👋", "dayOfJourney": "여정 {{day}}일차", "level": "Lv {{level}}", "totalXp": "총 XP", "streak": "연속", "todaysMissions": "오늘의 미션" },
+  "streakBadge": { "currentStreak": "현재 연속", "days": "일", "best": "최고: {{count}}일" },
+  "progressRing": { "done": "완료", "todaysProgress": "오늘의 진행", "missionsComplete": "{{total}}개 중 {{completed}}개 미션 완료", "allDone": "🎉 모두 완료! 대단해요!" },
+  "achievements": { "title": "업적", "unlocked": "{{count}}/{{total}} 해제", "unlockedTooltip": "✅ 해제됨!", "daysToGo": "{{count}}일 남음", "starter": "스타터", "weekWarrior": "주간 전사", "committed": "헌신자", "monthlyMaster": "월간 마스터", "unstoppable": "멈출 수 없는", "centurion": "백인대장", "legend": "전설" },
+  "progress": { "title": "주간 진행", "subtitle": "지난 7일 한눈에 보기", "missions": "미션", "xpEarned": "획득 XP", "completion": "완료율", "missionCompletions": "미션 완료", "streakHistory": "연속 기록", "today": "오늘", "yesterday": "어제" },
+  "history": { "title": "미션 기록", "missionsCompleted": "{{count}}개 미션 완료", "completed": "완료", "xpEarned": "획득 XP", "topCategory": "최고 카테고리", "all": "전체", "noMissions": "완료된 미션 없음", "noMissionsDesc": "일일 미션을 완료하면 여기에 표시됩니다!" },
+  "leaderboard": { "title": "리더보드", "subtitle": "이번 시즌 최고의 학생들", "you": "나", "xp": "XP", "streakDays": "{{count}}일 연속" },
+  "settings": { "title": "프로필 설정", "avatarHint": "탭하여 아바타 변경 (최대 2MB)", "displayName": "표시 이름", "notifications": "알림", "dailyReminders": "일일 알림", "dailyRemindersDesc": "미션 완료 알림 받기", "streakWarnings": "연속 경고", "streakWarningsDesc": "연속이 위험할 때 알림", "achievementsNotif": "업적 알림", "achievementsNotifDesc": "배지 해제 시 축하", "save": "변경 저장", "saved": "프로필 저장됨! ✨", "saveFailed": "저장 실패", "fileTooLarge": "파일이 너무 큼", "fileTooLargeDesc": "2MB 이하 이미지를 선택하세요.", "uploadFailed": "업로드 실패", "avatarUploaded": "아바타 업로드됨!", "invalidName": "잘못된 이름", "invalidNameDesc": "표시 이름은 1-50자여야 합니다.", "language": "언어", "languageDesc": "선호하는 언어를 선택하세요" },
+  "tutorial": { "welcome": "QuestUp에 오신 것을 환영합니다! 🎮", "welcomeDesc": "학생 생활이 레벨업됩니다. 일일 미션을 완료하고, XP를 얻고, 연속 기록을 쌓아 최고의 자신이 되세요.", "missions": "일일 미션 🎯", "missionsDesc": "매일 학습, 운동, 사교, 창작, 웰빙 카테고리의 새로운 미션을 받습니다.", "streaks": "연속 & 업적 🏆", "streaksDesc": "매일 미션을 완료하여 연속 기록을 쌓으세요. 7일, 30일, 100일 마일스톤에서 배지를 해제하세요!", "ai": "AI 동반자 🤖", "aiDesc": "QuestUp AI는 당신의 개인 코치, 학습 도우미, 플래너입니다.", "getStarted": "시작하기! 🚀", "next": "다음", "back": "뒤로", "skip": "튜토리얼 건너뛰기" },
+  "ai": { "title": "QuestUp AI", "coach": "코치", "study": "학습", "planner": "플래너", "general": "일반", "placeholder": "QuestUp AI에게 물어보세요...", "greeting": "안녕! QuestUp AI입니다. 무엇이든 물어보세요!", "fallback": "계속 화이팅, 잘하고 있어요! 💪", "error": "연결에 문제가 있어요. 계속 화이팅! 💪" },
+  "quote": { "newQuote": "새 명언" },
+  "categories": { "study": "학습", "exercise": "운동", "social": "사교", "creative": "창작", "wellness": "웰빙" },
+  "mission": { "level": "Lv {{level}}", "xp": "XP" }
+}
