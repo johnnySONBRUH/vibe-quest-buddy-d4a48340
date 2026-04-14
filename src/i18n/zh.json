@@ -1,7 +1,7 @@
 {
   "app": { "name": "QuestUp", "tagline": "提升你的学生生活" },
   "auth": { "signIn": "登录", "signUp": "注册", "email": "邮箱", "password": "密码", "displayName": "显示名称", "yourName": "你的名字", "loading": "加载中...", "createAccount": "创建账户", "checkEmail": "请检查邮箱以确认您的账户！" },
-  "dashboard": { "hey": "嘿，{{name}}！👋", "dayOfJourney": "旅程第 {{day}} 天", "level": "Lv {{level}}", "totalXp": "总经验", "streak": "连续天数", "todaysMissions": "今日任务" },
+  "dashboard": { "hey": "嘿，{{name}}！👋", "dayOfJourney": "旅程第 {{day}} 天", "level": "Lv {{level}}", "totalXp": "总经验", "streak": "连续天数", "todaysMissions": "今日任务", "noMissionsInCategory": "今天这个类别没有任务" },
   "streakBadge": { "currentStreak": "当前连续", "days": "天", "best": "最佳：{{count}} 天" },
   "progressRing": { "done": "完成", "todaysProgress": "今日进度", "missionsComplete": "已完成 {{completed}}/{{total}} 个任务", "allDone": "🎉 全部完成！太棒了！" },
   "achievements": { "title": "成就", "unlocked": "{{count}}/{{total}} 已解锁", "unlockedTooltip": "✅ 已解锁！", "daysToGo": "还差 {{count}} 天", "starter": "新手", "weekWarrior": "周勇士", "committed": "坚持者", "monthlyMaster": "月度大师", "unstoppable": "不可阻挡", "centurion": "百日勇士", "legend": "传奇" },
@@ -13,5 +13,8 @@
   "ai": { "title": "QuestUp AI", "coach": "教练", "study": "学习", "planner": "规划", "general": "通用", "placeholder": "问 QuestUp AI...", "greeting": "嘿！我是你的 QuestUp AI。试着问我点什么！", "fallback": "继续加油，你做得很棒！💪", "error": "连接遇到问题。继续加油！💪" },
   "quote": { "newQuote": "换一条" },
   "categories": { "study": "学习", "exercise": "运动", "social": "社交", "creative": "创意", "wellness": "健康" },
-  "mission": { "level": "Lv {{level}}", "xp": "经验" }
+  "mission": { "level": "Lv {{level}}", "xp": "经验" },
+  "checkIn": { "title": "每日签到奖励！", "description": "领取 +{{xp}} XP 每日奖励！", "claim": "领取奖励", "claimed": "已领取！🎉" },
+  "customMissions": { "title": "我的任务", "add": "添加", "cancel": "取消", "titlePlaceholder": "任务标题...", "descPlaceholder": "描述（可选）", "create": "创建任务", "created": "自定义任务已创建！✨", "maxReached": "最多3个活跃自定义任务", "empty": "还没有自定义任务，创建你自己的吧！" },
+  "friends": { "title": "好友", "myFriends": "好友", "requests": "请求", "findFriends": "查找", "searchPlaceholder": "按名称搜索...", "addFriend": "添加", "alreadyFriends": "已是好友 ✓", "pending": "待处理", "requestSent": "好友请求已发送！🤝", "requestFailed": "无法发送请求", "accepted": "好友请求已接受！🎉", "rejected": "请求已拒绝", "noFriends": "还没有好友，去找同学连接吧！", "noRequests": "没有待处理的请求", "wantsToConnect": "想成为你的好友" }
 }
