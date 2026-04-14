@@ -20,7 +20,8 @@
     "level": "Lvl {{level}}",
     "totalXp": "Total XP",
     "streak": "Streak",
-    "todaysMissions": "Today's Missions"
+    "todaysMissions": "Today's Missions",
+    "noMissionsInCategory": "No missions in this category today"
   },
   "streakBadge": {
     "currentStreak": "Current Streak",
@@ -135,5 +136,39 @@
   "mission": {
     "level": "Lvl {{level}}",
     "xp": "XP"
+  },
+  "checkIn": {
+    "title": "Daily Check-in Bonus!",
+    "description": "Claim your daily +{{xp}} XP bonus!",
+    "claim": "Claim Reward",
+    "claimed": "Claimed! 🎉"
+  },
+  "customMissions": {
+    "title": "My Missions",
+    "add": "Add",
+    "cancel": "Cancel",
+    "titlePlaceholder": "Mission title...",
+    "descPlaceholder": "Description (optional)",
+    "create": "Create Mission",
+    "created": "Custom mission created! ✨",
+    "maxReached": "Max 3 active custom missions",
+    "empty": "No custom missions yet. Create your own!"
+  },
+  "friends": {
+    "title": "Friends",
+    "myFriends": "Friends",
+    "requests": "Requests",
+    "findFriends": "Find",
+    "searchPlaceholder": "Search by name...",
+    "addFriend": "Add",
+    "alreadyFriends": "Friends ✓",
+    "pending": "Pending",
+    "requestSent": "Friend request sent! 🤝",
+    "requestFailed": "Could not send request",
+    "accepted": "Friend request accepted! 🎉",
+    "rejected": "Request declined",
+    "noFriends": "No friends yet. Find students to connect with!",
+    "noRequests": "No pending requests",
+    "wantsToConnect": "wants to be your friend"
   }
 }

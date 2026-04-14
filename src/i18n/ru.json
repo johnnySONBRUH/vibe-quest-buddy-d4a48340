@@ -1,7 +1,7 @@
 {
   "app": { "name": "QuestUp", "tagline": "Прокачай свою студенческую жизнь" },
   "auth": { "signIn": "Войти", "signUp": "Регистрация", "email": "Почта", "password": "Пароль", "displayName": "Имя", "yourName": "Ваше имя", "loading": "Загрузка...", "createAccount": "Создать аккаунт", "checkEmail": "Проверьте почту для подтверждения аккаунта!" },
-  "dashboard": { "hey": "Привет, {{name}}! 👋", "dayOfJourney": "День {{day}} твоего пути", "level": "Ур {{level}}", "totalXp": "Всего XP", "streak": "Серия", "todaysMissions": "Миссии на Сегодня" },
+  "dashboard": { "hey": "Привет, {{name}}! 👋", "dayOfJourney": "День {{day}} твоего пути", "level": "Ур {{level}}", "totalXp": "Всего XP", "streak": "Серия", "todaysMissions": "Миссии на Сегодня", "noMissionsInCategory": "Нет миссий в этой категории сегодня" },
   "streakBadge": { "currentStreak": "Текущая серия", "days": "дней", "best": "Лучшая: {{count}} дней" },
   "progressRing": { "done": "готово", "todaysProgress": "Прогресс за день", "missionsComplete": "{{completed}} из {{total}} миссий выполнено", "allDone": "🎉 Всё выполнено! Отлично!" },
   "achievements": { "title": "Достижения", "unlocked": "{{count}}/{{total}} разблокировано", "unlockedTooltip": "✅ Разблокировано!", "daysToGo": "ещё {{count}} дней", "starter": "Новичок", "weekWarrior": "Воин Недели", "committed": "Целеустремлённый", "monthlyMaster": "Мастер Месяца", "unstoppable": "Неудержимый", "centurion": "Центурион", "legend": "Легенда" },
@@ -13,5 +13,8 @@
   "ai": { "title": "QuestUp AI", "coach": "Тренер", "study": "Учёба", "planner": "Планировщик", "general": "Общее", "placeholder": "Спроси QuestUp AI...", "greeting": "Привет! Я QuestUp AI. Спроси меня что-нибудь!", "fallback": "Продолжай, ты молодец! 💪", "error": "Проблемы с подключением. Не сдавайся! 💪" },
   "quote": { "newQuote": "Новая цитата" },
   "categories": { "study": "Учёба", "exercise": "Спорт", "social": "Общение", "creative": "Творчество", "wellness": "Здоровье" },
-  "mission": { "level": "Ур {{level}}", "xp": "XP" }
+  "mission": { "level": "Ур {{level}}", "xp": "XP" },
+  "checkIn": { "title": "Ежедневный бонус!", "description": "Получите ежедневный бонус +{{xp}} XP!", "claim": "Получить", "claimed": "Получено! 🎉" },
+  "customMissions": { "title": "Мои миссии", "add": "Добавить", "cancel": "Отмена", "titlePlaceholder": "Название миссии...", "descPlaceholder": "Описание (необязательно)", "create": "Создать миссию", "created": "Миссия создана! ✨", "maxReached": "Максимум 3 активные миссии", "empty": "Нет своих миссий. Создайте свою!" },
+  "friends": { "title": "Друзья", "myFriends": "Друзья", "requests": "Запросы", "findFriends": "Поиск", "searchPlaceholder": "Поиск по имени...", "addFriend": "Добавить", "alreadyFriends": "Друзья ✓", "pending": "Ожидание", "requestSent": "Запрос отправлен! 🤝", "requestFailed": "Не удалось отправить запрос", "accepted": "Запрос принят! 🎉", "rejected": "Запрос отклонён", "noFriends": "Пока нет друзей. Найдите студентов!", "noRequests": "Нет ожидающих запросов", "wantsToConnect": "хочет стать вашим другом" }
 }

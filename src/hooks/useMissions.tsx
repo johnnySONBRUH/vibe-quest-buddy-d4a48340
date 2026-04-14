@@ -101,12 +101,13 @@ export const useMissions = () => {
 
     // Update profile
     const newXp = profile.total_xp + xpEarned;
-    const isNewDay = profile.last_completion_date !== today;
     const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
     const wasYesterday = profile.last_completion_date === yesterdayStr;
-    const newStreak = allDone
-      ? (wasYesterday || isNewDay ? profile.current_streak + 1 : profile.current_streak)
-      : profile.current_streak;
+    const alreadyCompletedToday = profile.last_completion_date === today;
+    let newStreak = profile.current_streak;
+    if (allDone && !alreadyCompletedToday) {
+      newStreak = wasYesterday ? profile.current_streak + 1 : 1;
+    }
 
     const updates = allDone
       ? {
