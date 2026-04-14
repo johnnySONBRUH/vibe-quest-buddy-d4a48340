@@ -14,6 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
+      check_ins: {
+        Row: {
+          bonus_xp: number
+          check_in_date: string
+          created_at: string
+          id: string
+          streak_at_check_in: number
+          user_id: string
+        }
+        Insert: {
+          bonus_xp?: number
+          check_in_date?: string
+          created_at?: string
+          id?: string
+          streak_at_check_in?: number
+          user_id: string
+        }
+        Update: {
+          bonus_xp?: number
+          check_in_date?: string
+          created_at?: string
+          id?: string
+          streak_at_check_in?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      custom_missions: {
+        Row: {
+          category: string
+          completed_today: boolean
+          created_at: string
+          description: string
+          id: string
+          is_active: boolean
+          last_reset_date: string | null
+          title: string
+          updated_at: string
+          user_id: string
+          xp_reward: number
+        }
+        Insert: {
+          category?: string
+          completed_today?: boolean
+          created_at?: string
+          description?: string
+          id?: string
+          is_active?: boolean
+          last_reset_date?: string | null
+          title: string
+          updated_at?: string
+          user_id: string
+          xp_reward?: number
+        }
+        Update: {
+          category?: string
+          completed_today?: boolean
+          created_at?: string
+          description?: string
+          id?: string
+          is_active?: boolean
+          last_reset_date?: string | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+          xp_reward?: number
+        }
+        Relationships: []
+      }
       daily_missions: {
         Row: {
           assigned_date: string
@@ -57,6 +126,33 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      friendships: {
+        Row: {
+          addressee_id: string
+          created_at: string
+          id: string
+          requester_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          addressee_id: string
+          created_at?: string
+          id?: string
+          requester_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          addressee_id?: string
+          created_at?: string
+          id?: string
+          requester_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       missions: {
         Row: {
@@ -148,6 +244,16 @@ export type Database = {
           current_streak: number
           display_name: string
           longest_streak: number
+          total_xp: number
+          user_id: string
+        }[]
+      }
+      search_users: {
+        Args: { current_user_id: string; search_term: string }
+        Returns: {
+          avatar_url: string
+          current_streak: number
+          display_name: string
           total_xp: number
           user_id: string
         }[]
