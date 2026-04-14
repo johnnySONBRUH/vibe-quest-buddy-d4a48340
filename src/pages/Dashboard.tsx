@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown, Settings } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown, Settings, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
@@ -12,17 +12,21 @@ import AIMotivator from '@/components/AIMotivator';
 import AchievementBadges from '@/components/AchievementBadges';
 import WelcomeTutorial from '@/components/WelcomeTutorial';
 import DailyQuote from '@/components/DailyQuote';
+import DailyCheckIn from '@/components/DailyCheckIn';
+import CategoryFilter from '@/components/CategoryFilter';
+import CustomMissions from '@/components/CustomMissions';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
 import Leaderboard from '@/pages/Leaderboard';
 import ProfileSettings from '@/pages/ProfileSettings';
+import Friends from '@/pages/Friends';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const Dashboard = () => {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
-  const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent } = useMissions();
+  const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent, fetchProfile } = useMissions();
   const { theme, toggleTheme } = useTheme();
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
@@ -31,7 +35,10 @@ const Dashboard = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showFriends, setShowFriends] = useState(false);
+  const [categoryFilter, setCategoryFilter] = useState('all');
 
+  if (showFriends) return <Friends onBack={() => setShowFriends(false)} />;
   if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} />;
   if (showLeaderboard) return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
   if (showHistory) return <MissionHistory onBack={() => setShowHistory(false)} />;
@@ -53,6 +60,14 @@ const Dashboard = () => {
   const level = Math.floor(profile.total_xp / 100) + 1;
   const xpInLevel = profile.total_xp % 100;
 
+  const filteredMissions = categoryFilter === 'all'
+    ? dailyMissions
+    : dailyMissions.filter(dm => dm.missions.category === categoryFilter);
+
+  const handleCheckInXp = (xp: number) => {
+    fetchProfile();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AnimatePresence>
@@ -73,6 +88,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setShowFriends(true)} className="text-muted-foreground"><Users size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground"><Crown size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
@@ -102,6 +118,7 @@ const Dashboard = () => {
           </div>
         </motion.div>
 
+        <DailyCheckIn currentStreak={profile.current_streak} onXpEarned={handleCheckInXp} />
         <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} />
         <AchievementBadges longestStreak={profile.longest_streak} currentStreak={profile.current_streak} />
         <DailyQuote />
@@ -109,12 +126,18 @@ const Dashboard = () => {
 
         <div>
           <h2 className="text-lg font-bold text-foreground mb-3">{t('dashboard.todaysMissions')}</h2>
-          <div className="space-y-3">
-            {dailyMissions.map((dm, i) => (
+          <CategoryFilter selected={categoryFilter} onSelect={setCategoryFilter} />
+          <div className="space-y-3 mt-3">
+            {filteredMissions.map((dm, i) => (
               <MissionCard key={dm.id} dailyMission={dm} onComplete={completeMission} index={i} />
             ))}
+            {filteredMissions.length === 0 && (
+              <p className="text-sm text-muted-foreground text-center py-4">{t('dashboard.noMissionsInCategory')}</p>
+            )}
           </div>
         </div>
+
+        <CustomMissions onXpEarned={handleCheckInXp} />
       </div>
 
       <AIMotivator streak={profile.current_streak} completedMissions={completedCount} totalMissions={totalCount} totalXp={profile.total_xp} />
