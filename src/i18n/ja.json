@@ -1,7 +1,7 @@
 {
   "app": { "name": "QuestUp", "tagline": "学生生活をレベルアップ" },
   "auth": { "signIn": "ログイン", "signUp": "新規登録", "email": "メール", "password": "パスワード", "displayName": "表示名", "yourName": "あなたの名前", "loading": "読み込み中...", "createAccount": "アカウント作成", "checkEmail": "メールを確認してアカウントを認証してください！" },
-  "dashboard": { "hey": "やあ、{{name}}！👋", "dayOfJourney": "旅の{{day}}日目", "level": "Lv {{level}}", "totalXp": "合計XP", "streak": "連続", "todaysMissions": "今日のミッション" },
+  "dashboard": { "hey": "やあ、{{name}}！👋", "dayOfJourney": "旅の{{day}}日目", "level": "Lv {{level}}", "totalXp": "合計XP", "streak": "連続", "todaysMissions": "今日のミッション", "noMissionsInCategory": "今日このカテゴリのミッションはありません" },
   "streakBadge": { "currentStreak": "現在の連続", "days": "日", "best": "最高：{{count}}日" },
   "progressRing": { "done": "完了", "todaysProgress": "今日の進捗", "missionsComplete": "{{total}}中{{completed}}ミッション完了", "allDone": "🎉 全て完了！素晴らしい！" },
   "achievements": { "title": "実績", "unlocked": "{{count}}/{{total}} 解除", "unlockedTooltip": "✅ 解除済み！", "daysToGo": "あと{{count}}日", "starter": "スターター", "weekWarrior": "ウィークウォリアー", "committed": "コミッテッド", "monthlyMaster": "マンスリーマスター", "unstoppable": "アンストッパブル", "centurion": "センチュリオン", "legend": "レジェンド" },
@@ -13,5 +13,8 @@
   "ai": { "title": "QuestUp AI", "coach": "コーチ", "study": "学習", "planner": "プランナー", "general": "一般", "placeholder": "QuestUp AIに聞く...", "greeting": "やあ！QuestUp AIです。何でも聞いてね！", "fallback": "頑張れ、よくやってるよ！💪", "error": "接続に問題があります。頑張り続けて！💪" },
   "quote": { "newQuote": "新しい名言" },
   "categories": { "study": "学習", "exercise": "運動", "social": "社交", "creative": "クリエイティブ", "wellness": "ウェルネス" },
-  "mission": { "level": "Lv {{level}}", "xp": "XP" }
+  "mission": { "level": "Lv {{level}}", "xp": "XP" },
+  "checkIn": { "title": "毎日のチェックインボーナス！", "description": "+{{xp}} XP の毎日ボーナスを受け取ろう！", "claim": "報酬を受け取る", "claimed": "受け取り済み！🎉" },
+  "customMissions": { "title": "マイミッション", "add": "追加", "cancel": "キャンセル", "titlePlaceholder": "ミッションタイトル...", "descPlaceholder": "説明（任意）", "create": "ミッション作成", "created": "カスタムミッション作成！✨", "maxReached": "アクティブカスタムミッションは最大3つ", "empty": "カスタムミッションはまだありません。自分で作ろう！" },
+  "friends": { "title": "友達", "myFriends": "友達", "requests": "リクエスト", "findFriends": "検索", "searchPlaceholder": "名前で検索...", "addFriend": "追加", "alreadyFriends": "友達 ✓", "pending": "保留中", "requestSent": "友達リクエスト送信！🤝", "requestFailed": "リクエストを送信できません", "accepted": "友達リクエスト承認！🎉", "rejected": "リクエスト拒否", "noFriends": "まだ友達がいません。学生を見つけてつながろう！", "noRequests": "保留中のリクエストなし", "wantsToConnect": "友達になりたがっています" }
 }

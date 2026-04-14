@@ -1,7 +1,7 @@
 {
   "app": { "name": "QuestUp", "tagline": "Sube de nivel tu vida estudiantil" },
   "auth": { "signIn": "Iniciar Sesión", "signUp": "Registrarse", "email": "Correo", "password": "Contraseña", "displayName": "Nombre", "yourName": "Tu nombre", "loading": "Cargando...", "createAccount": "Crear Cuenta", "checkEmail": "¡Revisa tu correo para confirmar tu cuenta!" },
-  "dashboard": { "hey": "¡Hola, {{name}}! 👋", "dayOfJourney": "Día {{day}} de tu viaje", "level": "Nv {{level}}", "totalXp": "XP Total", "streak": "Racha", "todaysMissions": "Misiones de Hoy" },
+  "dashboard": { "hey": "¡Hola, {{name}}! 👋", "dayOfJourney": "Día {{day}} de tu viaje", "level": "Nv {{level}}", "totalXp": "XP Total", "streak": "Racha", "todaysMissions": "Misiones de Hoy", "noMissionsInCategory": "No hay misiones en esta categoría hoy" },
   "streakBadge": { "currentStreak": "Racha Actual", "days": "días", "best": "Mejor: {{count}} días" },
   "progressRing": { "done": "hecho", "todaysProgress": "Progreso de Hoy", "missionsComplete": "{{completed}} de {{total}} misiones completas", "allDone": "🎉 ¡Todo listo! ¡Increíble!" },
   "achievements": { "title": "Logros", "unlocked": "{{count}}/{{total}} desbloqueados", "unlockedTooltip": "✅ ¡Desbloqueado!", "daysToGo": "{{count}} días restantes", "starter": "Principiante", "weekWarrior": "Guerrero Semanal", "committed": "Comprometido", "monthlyMaster": "Maestro Mensual", "unstoppable": "Imparable", "centurion": "Centurión", "legend": "Leyenda" },
@@ -13,5 +13,8 @@
   "ai": { "title": "QuestUp AI", "coach": "Coach", "study": "Estudio", "planner": "Planificador", "general": "General", "placeholder": "Pregunta a QuestUp AI...", "greeting": "¡Hola! Soy tu QuestUp AI. ¡Pregúntame algo!", "fallback": "¡Sigue adelante, lo estás haciendo genial! 💪", "error": "Tengo problemas de conexión. ¡Sigue adelante! 💪" },
   "quote": { "newQuote": "Nueva cita" },
   "categories": { "study": "Estudio", "exercise": "Ejercicio", "social": "Social", "creative": "Creatividad", "wellness": "Bienestar" },
-  "mission": { "level": "Nv {{level}}", "xp": "XP" }
+  "mission": { "level": "Nv {{level}}", "xp": "XP" },
+  "checkIn": { "title": "¡Bonus de Check-in Diario!", "description": "¡Reclama tu bonus diario de +{{xp}} XP!", "claim": "Reclamar Recompensa", "claimed": "¡Reclamado! 🎉" },
+  "customMissions": { "title": "Mis Misiones", "add": "Añadir", "cancel": "Cancelar", "titlePlaceholder": "Título de misión...", "descPlaceholder": "Descripción (opcional)", "create": "Crear Misión", "created": "¡Misión personalizada creada! ✨", "maxReached": "Máximo 3 misiones personalizadas activas", "empty": "Sin misiones personalizadas. ¡Crea las tuyas!" },
+  "friends": { "title": "Amigos", "myFriends": "Amigos", "requests": "Solicitudes", "findFriends": "Buscar", "searchPlaceholder": "Buscar por nombre...", "addFriend": "Añadir", "alreadyFriends": "Amigos ✓", "pending": "Pendiente", "requestSent": "¡Solicitud de amistad enviada! 🤝", "requestFailed": "No se pudo enviar la solicitud", "accepted": "¡Solicitud aceptada! 🎉", "rejected": "Solicitud rechazada", "noFriends": "Aún no tienes amigos. ¡Busca estudiantes para conectar!", "noRequests": "Sin solicitudes pendientes", "wantsToConnect": "quiere ser tu amigo" }
 }
