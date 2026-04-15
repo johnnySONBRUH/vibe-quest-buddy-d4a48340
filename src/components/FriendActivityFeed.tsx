@@ -23,15 +23,25 @@ const FriendActivityFeed = () => {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const fetchActivities = async () => {
+    if (!user) return;
+    const { data } = await supabase.rpc('get_friend_activity', { current_user_id: user.id });
+    if (data) setActivities(data as Activity[]);
+    setLoading(false);
+  };
+
   useEffect(() => {
     if (!user) return;
-    const fetch = async () => {
-      setLoading(true);
-      const { data } = await supabase.rpc('get_friend_activity', { current_user_id: user.id });
-      if (data) setActivities(data as Activity[]);
-      setLoading(false);
-    };
-    fetch();
+    setLoading(true);
+    fetchActivities();
+
+    const channel = supabase
+      .channel('friend-activity')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'daily_missions' }, () => fetchActivities())
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'check_ins' }, () => fetchActivities())
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
   }, [user]);
 
   const timeAgo = (dateStr: string) => {
