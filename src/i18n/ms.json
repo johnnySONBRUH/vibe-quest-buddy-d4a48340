@@ -1,20 +1,178 @@
 {
-  "app": { "name": "QuestUp", "tagline": "Tingkatkan kehidupan pelajar anda" },
-  "auth": { "signIn": "Log Masuk", "signUp": "Daftar", "email": "E-mel", "password": "Kata Laluan", "displayName": "Nama Paparan", "yourName": "Nama anda", "loading": "Memuatkan...", "createAccount": "Cipta Akaun", "checkEmail": "Semak e-mel anda untuk mengesahkan akaun!" },
-  "dashboard": { "hey": "Hai, {{name}}! 👋", "dayOfJourney": "Hari {{day}} perjalanan anda", "level": "Lvl {{level}}", "totalXp": "Jumlah XP", "streak": "Rentak", "todaysMissions": "Misi Hari Ini", "noMissionsInCategory": "Tiada misi dalam kategori ini hari ini" },
-  "streakBadge": { "currentStreak": "Rentak Semasa", "days": "hari", "best": "Terbaik: {{count}} hari" },
-  "progressRing": { "done": "siap", "todaysProgress": "Kemajuan Hari Ini", "missionsComplete": "{{completed}} daripada {{total}} misi selesai", "allDone": "🎉 Semua siap! Kerja hebat!" },
-  "achievements": { "title": "Pencapaian", "unlocked": "{{count}}/{{total}} dibuka", "unlockedTooltip": "✅ Dibuka!", "daysToGo": "{{count}} hari lagi", "starter": "Pemula", "weekWarrior": "Pejuang Minggu", "committed": "Komited", "monthlyMaster": "Master Bulanan", "unstoppable": "Tidak Terhenti", "centurion": "Centurion", "legend": "Lagenda" },
-  "progress": { "title": "Kemajuan Mingguan", "subtitle": "7 hari terakhir anda", "missions": "Misi", "xpEarned": "XP Diperolehi", "completion": "Penyelesaian", "missionCompletions": "Penyelesaian Misi", "streakHistory": "Sejarah Rentak", "today": "Hari Ini", "yesterday": "Semalam" },
-  "history": { "title": "Sejarah Misi", "missionsCompleted": "{{count}} misi diselesaikan", "completed": "Selesai", "xpEarned": "XP Diperolehi", "topCategory": "Kategori Teratas", "all": "Semua", "noMissions": "Belum ada misi selesai", "noMissionsDesc": "Selesaikan misi harian untuk melihatnya di sini!" },
-  "leaderboard": { "title": "Papan Pendahulu", "subtitle": "Pelajar teratas musim ini", "you": "Anda", "xp": "XP", "streakDays": "{{count}}h rentak" },
-  "settings": { "title": "Tetapan Profil", "avatarHint": "Ketuk untuk tukar avatar (maks 2MB)", "displayName": "Nama Paparan", "notifications": "Pemberitahuan", "dailyReminders": "Peringatan Harian", "dailyRemindersDesc": "Peringatan untuk selesaikan misi", "streakWarnings": "Amaran Rentak", "streakWarningsDesc": "Makluman bila rentak berisiko", "achievementsNotif": "Pencapaian", "achievementsNotifDesc": "Raikan bila anda buka lencana", "save": "Simpan Perubahan", "saved": "Profil disimpan! ✨", "saveFailed": "Gagal menyimpan", "fileTooLarge": "Fail terlalu besar", "fileTooLargeDesc": "Sila pilih gambar bawah 2MB.", "uploadFailed": "Muat naik gagal", "avatarUploaded": "Avatar dimuat naik!", "invalidName": "Nama tidak sah", "invalidNameDesc": "Nama paparan mestilah 1-50 aksara.", "language": "Bahasa", "languageDesc": "Pilih bahasa pilihan anda" },
-  "tutorial": { "welcome": "Selamat datang ke QuestUp! 🎮", "welcomeDesc": "Kehidupan pelajar anda akan naik taraf. Selesaikan misi harian, dapat XP, dan bina rentak untuk jadi versi terbaik diri anda.", "missions": "Misi Harian 🎯", "missionsDesc": "Setiap hari anda dapat misi baru merangkumi Belajar, Senaman, Sosial, Kreatif, dan Kesejahteraan.", "streaks": "Rentak & Pencapaian 🏆", "streaksDesc": "Selesaikan misi setiap hari untuk bina rentak. Capai pencapaian pada 7, 30, dan 100 hari!", "ai": "Teman AI Anda 🤖", "aiDesc": "QuestUp AI adalah jurulatih peribadi, pembantu belajar, dan perancang anda.", "getStarted": "Mulakan! 🚀", "next": "Seterusnya", "back": "Kembali", "skip": "Langkau tutorial" },
-  "ai": { "title": "QuestUp AI", "coach": "Jurulatih", "study": "Belajar", "planner": "Perancang", "general": "Umum", "placeholder": "Tanya QuestUp AI...", "greeting": "Hai! Saya QuestUp AI anda. Cuba tanya sesuatu!", "fallback": "Teruskan, anda hebat! 💪", "error": "Saya ada masalah sambungan. Teruskan berjuang! 💪" },
-  "quote": { "newQuote": "Petikan baru" },
-  "categories": { "study": "Belajar", "exercise": "Senaman", "social": "Sosial", "creative": "Kreatif", "wellness": "Kesejahteraan" },
-  "mission": { "level": "Lvl {{level}}", "xp": "XP" },
-  "checkIn": { "title": "Bonus Daftar Masuk Harian!", "description": "Tuntut bonus +{{xp}} XP harian anda!", "claim": "Tuntut Ganjaran", "claimed": "Dituntut! 🎉" },
-  "customMissions": { "title": "Misi Saya", "add": "Tambah", "cancel": "Batal", "titlePlaceholder": "Tajuk misi...", "descPlaceholder": "Penerangan (pilihan)", "create": "Cipta Misi", "created": "Misi kustom dicipta! ✨", "maxReached": "Maksimum 3 misi kustom aktif", "empty": "Belum ada misi kustom. Cipta sendiri!" },
-  "friends": { "title": "Rakan", "myFriends": "Rakan", "requests": "Permintaan", "findFriends": "Cari", "searchPlaceholder": "Cari mengikut nama...", "addFriend": "Tambah", "alreadyFriends": "Rakan ✓", "pending": "Menunggu", "requestSent": "Permintaan rakan dihantar! 🤝", "requestFailed": "Tidak dapat hantar permintaan", "accepted": "Permintaan rakan diterima! 🎉", "rejected": "Permintaan ditolak", "noFriends": "Belum ada rakan. Cari pelajar untuk berhubung!", "noRequests": "Tiada permintaan menunggu", "wantsToConnect": "ingin menjadi rakan anda" }
+  "app": {
+    "name": "QuestUp",
+    "tagline": "Tingkatkan kehidupan pelajar anda"
+  },
+  "auth": {
+    "signIn": "Log Masuk",
+    "signUp": "Daftar",
+    "email": "E-mel",
+    "password": "Kata Laluan",
+    "displayName": "Nama Paparan",
+    "yourName": "Nama anda",
+    "loading": "Memuatkan...",
+    "createAccount": "Cipta Akaun",
+    "checkEmail": "Semak e-mel anda untuk mengesahkan akaun!"
+  },
+  "dashboard": {
+    "hey": "Hai, {{name}}! 👋",
+    "dayOfJourney": "Hari {{day}} perjalanan anda",
+    "level": "Lvl {{level}}",
+    "totalXp": "Jumlah XP",
+    "streak": "Rentak",
+    "todaysMissions": "Misi Hari Ini",
+    "noMissionsInCategory": "Tiada misi dalam kategori ini hari ini"
+  },
+  "streakBadge": {
+    "currentStreak": "Rentak Semasa",
+    "days": "hari",
+    "best": "Terbaik: {{count}} hari"
+  },
+  "progressRing": {
+    "done": "siap",
+    "todaysProgress": "Kemajuan Hari Ini",
+    "missionsComplete": "{{completed}} daripada {{total}} misi selesai",
+    "allDone": "🎉 Semua siap! Kerja hebat!"
+  },
+  "achievements": {
+    "title": "Pencapaian",
+    "unlocked": "{{count}}/{{total}} dibuka",
+    "unlockedTooltip": "✅ Dibuka!",
+    "daysToGo": "{{count}} hari lagi",
+    "starter": "Pemula",
+    "weekWarrior": "Pejuang Minggu",
+    "committed": "Komited",
+    "monthlyMaster": "Master Bulanan",
+    "unstoppable": "Tidak Terhenti",
+    "centurion": "Centurion",
+    "legend": "Lagenda"
+  },
+  "progress": {
+    "title": "Kemajuan Mingguan",
+    "subtitle": "7 hari terakhir anda",
+    "missions": "Misi",
+    "xpEarned": "XP Diperolehi",
+    "completion": "Penyelesaian",
+    "missionCompletions": "Penyelesaian Misi",
+    "streakHistory": "Sejarah Rentak",
+    "today": "Hari Ini",
+    "yesterday": "Semalam"
+  },
+  "history": {
+    "title": "Sejarah Misi",
+    "missionsCompleted": "{{count}} misi diselesaikan",
+    "completed": "Selesai",
+    "xpEarned": "XP Diperolehi",
+    "topCategory": "Kategori Teratas",
+    "all": "Semua",
+    "noMissions": "Belum ada misi selesai",
+    "noMissionsDesc": "Selesaikan misi harian untuk melihatnya di sini!"
+  },
+  "leaderboard": {
+    "title": "Papan Pendahulu",
+    "subtitle": "Pelajar teratas musim ini",
+    "you": "Anda",
+    "xp": "XP",
+    "streakDays": "{{count}}h rentak"
+  },
+  "settings": {
+    "title": "Tetapan Profil",
+    "avatarHint": "Ketuk untuk tukar avatar (maks 2MB)",
+    "displayName": "Nama Paparan",
+    "notifications": "Pemberitahuan",
+    "dailyReminders": "Peringatan Harian",
+    "dailyRemindersDesc": "Peringatan untuk selesaikan misi",
+    "streakWarnings": "Amaran Rentak",
+    "streakWarningsDesc": "Makluman bila rentak berisiko",
+    "achievementsNotif": "Pencapaian",
+    "achievementsNotifDesc": "Raikan bila anda buka lencana",
+    "save": "Simpan Perubahan",
+    "saved": "Profil disimpan! ✨",
+    "saveFailed": "Gagal menyimpan",
+    "fileTooLarge": "Fail terlalu besar",
+    "fileTooLargeDesc": "Sila pilih gambar bawah 2MB.",
+    "uploadFailed": "Muat naik gagal",
+    "avatarUploaded": "Avatar dimuat naik!",
+    "invalidName": "Nama tidak sah",
+    "invalidNameDesc": "Nama paparan mestilah 1-50 aksara.",
+    "language": "Bahasa",
+    "languageDesc": "Pilih bahasa pilihan anda"
+  },
+  "tutorial": {
+    "welcome": "Selamat datang ke QuestUp! 🎮",
+    "welcomeDesc": "Kehidupan pelajar anda akan naik taraf. Selesaikan misi harian, dapat XP, dan bina rentak untuk jadi versi terbaik diri anda.",
+    "missions": "Misi Harian 🎯",
+    "missionsDesc": "Setiap hari anda dapat misi baru merangkumi Belajar, Senaman, Sosial, Kreatif, dan Kesejahteraan.",
+    "streaks": "Rentak & Pencapaian 🏆",
+    "streaksDesc": "Selesaikan misi setiap hari untuk bina rentak. Capai pencapaian pada 7, 30, dan 100 hari!",
+    "ai": "Teman AI Anda 🤖",
+    "aiDesc": "QuestUp AI adalah jurulatih peribadi, pembantu belajar, dan perancang anda.",
+    "getStarted": "Mulakan! 🚀",
+    "next": "Seterusnya",
+    "back": "Kembali",
+    "skip": "Langkau tutorial"
+  },
+  "ai": {
+    "title": "QuestUp AI",
+    "coach": "Jurulatih",
+    "study": "Belajar",
+    "planner": "Perancang",
+    "general": "Umum",
+    "placeholder": "Tanya QuestUp AI...",
+    "greeting": "Hai! Saya QuestUp AI anda. Cuba tanya sesuatu!",
+    "fallback": "Teruskan, anda hebat! 💪",
+    "error": "Saya ada masalah sambungan. Teruskan berjuang! 💪"
+  },
+  "quote": {
+    "newQuote": "Petikan baru"
+  },
+  "categories": {
+    "study": "Belajar",
+    "exercise": "Senaman",
+    "social": "Sosial",
+    "creative": "Kreatif",
+    "wellness": "Kesejahteraan"
+  },
+  "mission": {
+    "level": "Lvl {{level}}",
+    "xp": "XP"
+  },
+  "checkIn": {
+    "title": "Bonus Daftar Masuk Harian!",
+    "description": "Tuntut bonus +{{xp}} XP harian anda!",
+    "claim": "Tuntut Ganjaran",
+    "claimed": "Dituntut! 🎉"
+  },
+  "customMissions": {
+    "title": "Misi Saya",
+    "add": "Tambah",
+    "cancel": "Batal",
+    "titlePlaceholder": "Tajuk misi...",
+    "descPlaceholder": "Penerangan (pilihan)",
+    "create": "Cipta Misi",
+    "created": "Misi kustom dicipta! ✨",
+    "maxReached": "Maksimum 3 misi kustom aktif",
+    "empty": "Belum ada misi kustom. Cipta sendiri!"
+  },
+  "friends": {
+    "title": "Rakan",
+    "myFriends": "Rakan",
+    "requests": "Permintaan",
+    "findFriends": "Cari",
+    "searchPlaceholder": "Cari mengikut nama...",
+    "addFriend": "Tambah",
+    "alreadyFriends": "Rakan ✓",
+    "pending": "Menunggu",
+    "requestSent": "Permintaan rakan dihantar! 🤝",
+    "requestFailed": "Tidak dapat hantar permintaan",
+    "accepted": "Permintaan rakan diterima! 🎉",
+    "rejected": "Permintaan ditolak",
+    "noFriends": "Belum ada rakan. Cari pelajar untuk berhubung!",
+    "noRequests": "Tiada permintaan menunggu",
+    "wantsToConnect": "ingin menjadi rakan anda",
+    "activity": "Aktiviti",
+    "noActivity": "Tiada aktiviti terkini",
+    "checkedIn": "telah daftar masuk",
+    "completed": "telah selesai"
+  }
 }
