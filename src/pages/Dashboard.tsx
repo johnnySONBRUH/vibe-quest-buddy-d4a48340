@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown, Settings, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,7 @@ import ProfileSettings from '@/pages/ProfileSettings';
 import Friends from '@/pages/Friends';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { supabase } from '@/integrations/supabase/client';
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -37,6 +38,20 @@ const Dashboard = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [showFriends, setShowFriends] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState('all');
+  const [pendingRequestCount, setPendingRequestCount] = useState(0);
+
+  useEffect(() => {
+    if (!user) return;
+    const fetchCount = async () => {
+      const { count } = await supabase
+        .from('friendships')
+        .select('*', { count: 'exact', head: true })
+        .eq('addressee_id', user.id)
+        .eq('status', 'pending');
+      setPendingRequestCount(count || 0);
+    };
+    fetchCount();
+  }, [user, showFriends]);
 
   if (showFriends) return <Friends onBack={() => setShowFriends(false)} />;
   if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} />;
@@ -88,7 +103,14 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" onClick={() => setShowFriends(true)} className="text-muted-foreground"><Users size={20} /></Button>
+            <Button variant="ghost" size="icon" onClick={() => setShowFriends(true)} className="text-muted-foreground relative">
+              <Users size={20} />
+              {pendingRequestCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold flex items-center justify-center px-1">
+                  {pendingRequestCount > 9 ? '9+' : pendingRequestCount}
+                </span>
+              )}
+            </Button>
             <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground"><Crown size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
