@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Users, Search, UserPlus, Check, X, Flame, Zap } from 'lucide-react';
+import { ArrowLeft, Users, Search, UserPlus, Check, X, Flame, Zap, Activity } from 'lucide-react';
+import FriendActivityFeed from '@/components/FriendActivityFeed';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
@@ -27,7 +28,7 @@ interface Friendship {
 const Friends = ({ onBack }: { onBack: () => void }) => {
   const { t } = useTranslation();
   const { user } = useAuth();
-  const [tab, setTab] = useState<'friends' | 'requests' | 'search'>('friends');
+  const [tab, setTab] = useState<'friends' | 'requests' | 'search' | 'activity'>('friends');
   const [friends, setFriends] = useState<FriendProfile[]>([]);
   const [pendingRequests, setPendingRequests] = useState<(Friendship & { profile: FriendProfile })[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -126,6 +127,7 @@ const Friends = ({ onBack }: { onBack: () => void }) => {
     { key: 'friends' as const, label: t('friends.myFriends'), count: friends.length },
     { key: 'requests' as const, label: t('friends.requests'), count: pendingRequests.length },
     { key: 'search' as const, label: t('friends.findFriends') },
+    { key: 'activity' as const, label: t('friends.activity') },
   ];
 
   return (
@@ -199,6 +201,9 @@ const Friends = ({ onBack }: { onBack: () => void }) => {
             )}
           </div>
         )}
+
+        {/* Activity Feed */}
+        {tab === 'activity' && <FriendActivityFeed />}
 
         {/* Search */}
         {tab === 'search' && (

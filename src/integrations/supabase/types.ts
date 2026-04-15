@@ -237,6 +237,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_friend_activity: {
+        Args: { current_user_id: string; limit_count?: number }
+        Returns: {
+          activity_date: string
+          activity_type: string
+          avatar_url: string
+          display_name: string
+          title: string
+          user_id: string
+          xp_earned: number
+        }[]
+      }
       get_leaderboard: {
         Args: { limit_count?: number }
         Returns: {

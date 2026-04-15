@@ -169,6 +169,10 @@
     "rejected": "Request declined",
     "noFriends": "No friends yet. Find students to connect with!",
     "noRequests": "No pending requests",
-    "wantsToConnect": "wants to be your friend"
+    "wantsToConnect": "wants to be your friend",
+    "activity": "Activity",
+    "noActivity": "No recent activity from friends",
+    "checkedIn": "checked in",
+    "completed": "completed"
   }
 }
