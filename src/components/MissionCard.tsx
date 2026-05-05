@@ -96,7 +96,7 @@ const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
             <span className="text-xs text-muted-foreground">{t('mission.level', { level: difficulty_level })}</span>
             {pending && (
               <span className="text-xs text-primary font-medium">
-                Confirming… {Math.ceil((COOLDOWN_MS - (progress / 100) * COOLDOWN_MS) / 1000)}s
+                {t('common.confirming')} {Math.ceil((COOLDOWN_MS - (progress / 100) * COOLDOWN_MS) / 1000)}s
               </span>
             )}
           </div>
@@ -105,7 +105,7 @@ const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
           <span className={`text-lg font-bold ${completed ? 'text-success' : 'text-accent-foreground'}`}>+{xpValue}</span>
           {pending ? (
             <button onClick={cancelCooldown} className="text-xs text-muted-foreground hover:text-destructive flex items-center gap-1">
-              <X size={12} /> Cancel
+              <X size={12} /> {t('common.cancel')}
             </button>
           ) : (
             <p className="text-xs text-muted-foreground">{t('mission.xp')}</p>

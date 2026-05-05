@@ -31,7 +31,7 @@ const StreakBadge = ({ streak, longestStreak, totalDays }: StreakBadgeProps) => 
             <div className="mt-2 flex items-center gap-1.5 text-xs text-foreground/80">
               <CalendarDays size={14} className="text-primary" />
               <span className="font-semibold">{totalDays}</span>
-              <span className="text-muted-foreground">total days on QuestUp</span>
+              <span className="text-muted-foreground">{t('common.totalDays')}</span>
             </div>
           )}
         </div>
