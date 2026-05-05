@@ -1,13 +1,14 @@
-import { Flame } from 'lucide-react';
+import { Flame, CalendarDays } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 interface StreakBadgeProps {
   streak: number;
   longestStreak: number;
+  totalDays?: number;
 }
 
-const StreakBadge = ({ streak, longestStreak }: StreakBadgeProps) => {
+const StreakBadge = ({ streak, longestStreak, totalDays }: StreakBadgeProps) => {
   const { t } = useTranslation();
   return (
     <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="glass-card rounded-2xl p-6 relative overflow-hidden">
@@ -22,10 +23,17 @@ const StreakBadge = ({ streak, longestStreak }: StreakBadgeProps) => {
             <Flame className={`text-primary-foreground ${streak > 0 ? 'animate-flame' : ''}`} size={32} />
           </motion.div>
         </div>
-        <div>
+        <div className="flex-1">
           <p className="text-sm font-medium text-muted-foreground">{t('streakBadge.currentStreak')}</p>
           <p className="text-3xl font-bold text-foreground">{streak} <span className="text-lg text-muted-foreground">{t('streakBadge.days')}</span></p>
           <p className="text-xs text-muted-foreground">{t('streakBadge.best', { count: longestStreak })}</p>
+          {typeof totalDays === 'number' && (
+            <div className="mt-2 flex items-center gap-1.5 text-xs text-foreground/80">
+              <CalendarDays size={14} className="text-primary" />
+              <span className="font-semibold">{totalDays}</span>
+              <span className="text-muted-foreground">total days on QuestUp</span>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
