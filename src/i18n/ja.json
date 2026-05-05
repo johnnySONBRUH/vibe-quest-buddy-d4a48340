@@ -174,5 +174,12 @@
     "noActivity": "最近の友達の活動はありません",
     "checkedIn": "チェックインしました",
     "completed": "を完了しました"
+  },
+  "common": {
+    "totalDays": "QuestUp 利用総日数",
+    "confirming": "確認中…",
+    "cancel": "キャンセル",
+    "slowDown": "少しお待ちください — 操作の間隔を空けてください。",
+    "suspicious": "不審な活動が検出されました。1 分後に再試行してください。"
   }
 }

@@ -174,5 +174,12 @@
     "noActivity": "Sin actividad reciente de amigos",
     "checkedIn": "hizo check-in",
     "completed": "completó"
+  },
+  "common": {
+    "totalDays": "días totales en QuestUp",
+    "confirming": "Confirmando…",
+    "cancel": "Cancelar",
+    "slowDown": "Más despacio: espera un momento entre acciones.",
+    "suspicious": "Actividad sospechosa detectada. Espera un minuto antes de completar más misiones."
   }
 }

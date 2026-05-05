@@ -174,5 +174,12 @@
     "noActivity": "최근 친구 활동이 없습니다",
     "checkedIn": "체크인했습니다",
     "completed": "완료했습니다"
+  },
+  "common": {
+    "totalDays": "QuestUp 사용 총 일수",
+    "confirming": "확인 중…",
+    "cancel": "취소",
+    "slowDown": "천천히 — 작업 사이에 잠시 기다려 주세요.",
+    "suspicious": "의심스러운 활동이 감지되었습니다. 1분 후에 다시 시도하세요."
   }
 }
