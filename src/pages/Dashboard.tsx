@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, Sun, Moon, BarChart3, History, Crown, Settings, Users } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
-import { useTheme } from '@/hooks/useTheme';
 import StreakBadge from '@/components/StreakBadge';
 import ProgressRing from '@/components/ProgressRing';
 import MissionCard from '@/components/MissionCard';
@@ -17,45 +16,23 @@ import CategoryFilter from '@/components/CategoryFilter';
 import CustomMissions from '@/components/CustomMissions';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
-import Leaderboard from '@/pages/Leaderboard';
 import ProfileSettings from '@/pages/ProfileSettings';
-import Friends from '@/pages/Friends';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { supabase } from '@/integrations/supabase/client';
 
 const Dashboard = () => {
   const { t } = useTranslation();
-  const { user, signOut } = useAuth();
+  const { signOut } = useAuth();
   const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent, fetchProfile } = useMissions();
-  const { theme, toggleTheme } = useTheme();
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
   );
   const [showProgress, setShowProgress] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
-  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [showFriends, setShowFriends] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState('all');
-  const [pendingRequestCount, setPendingRequestCount] = useState(0);
 
-  useEffect(() => {
-    if (!user) return;
-    const fetchCount = async () => {
-      const { count } = await supabase
-        .from('friendships')
-        .select('*', { count: 'exact', head: true })
-        .eq('addressee_id', user.id)
-        .eq('status', 'pending');
-      setPendingRequestCount(count || 0);
-    };
-    fetchCount();
-  }, [user, showFriends]);
-
-  if (showFriends) return <Friends onBack={() => setShowFriends(false)} />;
   if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} />;
-  if (showLeaderboard) return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
   if (showHistory) return <MissionHistory onBack={() => setShowHistory(false)} />;
   if (showProgress) return <Progress onBack={() => setShowProgress(false)} />;
 
@@ -79,7 +56,7 @@ const Dashboard = () => {
     ? dailyMissions
     : dailyMissions.filter(dm => dm.missions.category === categoryFilter);
 
-  const handleCheckInXp = (xp: number) => {
+  const handleCheckInXp = (_xp: number) => {
     fetchProfile();
   };
 
@@ -103,18 +80,8 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" onClick={() => setShowFriends(true)} className="text-muted-foreground relative">
-              <Users size={20} />
-              {pendingRequestCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold flex items-center justify-center px-1">
-                  {pendingRequestCount > 9 ? '9+' : pendingRequestCount}
-                </span>
-              )}
-            </Button>
-            <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground"><Crown size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</Button>
             <Button variant="ghost" size="icon" onClick={() => setShowSettings(true)} className="text-muted-foreground"><Settings size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground"><LogOut size={20} /></Button>
           </div>
