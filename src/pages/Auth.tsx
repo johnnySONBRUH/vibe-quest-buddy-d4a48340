@@ -4,8 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
-import { Flame, BookOpen, Dumbbell, Sparkles, Sun, Moon } from 'lucide-react';
-import { useTheme } from '@/hooks/useTheme';
+import { Flame, BookOpen, Dumbbell, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Auth = () => {
@@ -15,7 +14,6 @@ const Auth = () => {
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [loading, setLoading] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
