@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, BookOpen, Brain, Dumbbell, Footprints, Heart, Phone, Users, PenTool, Lightbulb, Sparkles, Droplets, Moon, Star } from 'lucide-react';
+import { Check, BookOpen, Brain, Dumbbell, Footprints, Heart, Phone, Users, PenTool, Lightbulb, Sparkles, Droplets, Moon, Star, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Tables } from '@/integrations/supabase/types';
 
@@ -26,6 +27,8 @@ interface MissionCardProps {
   index: number;
 }
 
+const COOLDOWN_MS = 5000;
+
 const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
   const { t } = useTranslation();
   const { missions: mission, completed, difficulty_level, xp_earned } = dailyMission;
@@ -33,12 +36,46 @@ const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
   const cat = mission.category;
   const xpValue = completed ? xp_earned : Math.round(mission.xp_reward * (1 + difficulty_level * 0.1));
 
+  const [pending, setPending] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const timerRef = useRef<number | null>(null);
+  const startRef = useRef<number>(0);
+
+  useEffect(() => () => { if (timerRef.current) window.clearInterval(timerRef.current); }, []);
+
+  const startCooldown = () => {
+    if (completed || pending) return;
+    setPending(true);
+    setProgress(0);
+    startRef.current = Date.now();
+    timerRef.current = window.setInterval(() => {
+      const elapsed = Date.now() - startRef.current;
+      const pct = Math.min(100, (elapsed / COOLDOWN_MS) * 100);
+      setProgress(pct);
+      if (elapsed >= COOLDOWN_MS) {
+        if (timerRef.current) window.clearInterval(timerRef.current);
+        setPending(false);
+        onComplete(dailyMission.id);
+      }
+    }, 50);
+  };
+
+  const cancelCooldown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (timerRef.current) window.clearInterval(timerRef.current);
+    setPending(false);
+    setProgress(0);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }}
-      className={`rounded-xl border p-4 ${categoryColors[cat]} transition-all ${completed ? 'opacity-70' : 'hover:shadow-md cursor-pointer'}`}
-      onClick={() => !completed && onComplete(dailyMission.id)}
+      className={`rounded-xl border p-4 ${categoryColors[cat]} transition-all relative overflow-hidden ${completed ? 'opacity-70' : 'hover:shadow-md cursor-pointer'}`}
+      onClick={startCooldown}
     >
+      {pending && (
+        <div className="absolute bottom-0 left-0 h-1 bg-primary transition-all" style={{ width: `${progress}%` }} />
+      )}
       <div className="flex items-center gap-4">
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${completed ? 'bg-success/20' : categoryColors[cat]}`}>
           {completed ? (
@@ -57,11 +94,22 @@ const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
               {t(`categories.${cat}`)}
             </span>
             <span className="text-xs text-muted-foreground">{t('mission.level', { level: difficulty_level })}</span>
+            {pending && (
+              <span className="text-xs text-primary font-medium">
+                Confirming… {Math.ceil((COOLDOWN_MS - (progress / 100) * COOLDOWN_MS) / 1000)}s
+              </span>
+            )}
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right flex flex-col items-end gap-1">
           <span className={`text-lg font-bold ${completed ? 'text-success' : 'text-accent-foreground'}`}>+{xpValue}</span>
-          <p className="text-xs text-muted-foreground">{t('mission.xp')}</p>
+          {pending ? (
+            <button onClick={cancelCooldown} className="text-xs text-muted-foreground hover:text-destructive flex items-center gap-1">
+              <X size={12} /> Cancel
+            </button>
+          ) : (
+            <p className="text-xs text-muted-foreground">{t('mission.xp')}</p>
+          )}
         </div>
       </div>
     </motion.div>

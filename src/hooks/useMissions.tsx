@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from './useAuth';
 import { toast } from 'sonner';
+import { checkAction, recordAction } from '@/lib/antiCheat';
 import type { Tables } from '@/integrations/supabase/types';
 
 type Mission = Tables<'missions'>;
@@ -82,6 +83,13 @@ export const useMissions = () => {
 
     const mission = dailyMissions.find(m => m.id === missionId);
     if (!mission || mission.completed) return;
+
+    const guard = checkAction('mission_complete');
+    if (!guard.ok) {
+      toast.error(guard.reason);
+      return;
+    }
+    recordAction('mission_complete');
 
     const xpEarned = Math.round(mission.missions.xp_reward * (1 + mission.difficulty_level * 0.1));
 

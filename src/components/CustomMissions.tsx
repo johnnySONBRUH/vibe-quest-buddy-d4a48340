@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import { checkAction, recordAction } from '@/lib/antiCheat';
 
 interface CustomMission {
   id: string;
@@ -79,6 +80,9 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
 
   const handleComplete = async (mission: CustomMission) => {
     if (!user || mission.completed_today) return;
+    const guard = checkAction('mission_complete');
+    if (!guard.ok) { toast.error(guard.reason); return; }
+    recordAction('mission_complete');
     await supabase.from('custom_missions').update({
       completed_today: true,
       last_reset_date: today,
