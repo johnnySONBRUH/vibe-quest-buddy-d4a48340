@@ -1,5 +1,6 @@
 // Lightweight client-side anti-cheat: rate-limits actions and detects suspicious bursts.
 // Server-side constraints (daily mission count, unique check-in/day) provide the real ceiling.
+import i18n from '@/i18n';
 
 const KEY = 'questup_action_log';
 const WINDOW_MS = 60_000; // 1 minute
@@ -25,10 +26,10 @@ export const checkAction = (type: string): AntiCheatResult => {
   const log = read().filter(a => now - a.t < WINDOW_MS);
 
   if (log.length > 0 && now - log[log.length - 1].t < MIN_GAP_MS) {
-    return { ok: false, reason: 'Slow down — please wait a moment between actions.' };
+    return { ok: false, reason: i18n.t('common.slowDown') };
   }
   if (log.length >= MAX_PER_WINDOW) {
-    return { ok: false, reason: 'Suspicious activity detected. Please wait a minute before completing more missions.' };
+    return { ok: false, reason: i18n.t('common.suspicious') };
   }
   return { ok: true };
 };
