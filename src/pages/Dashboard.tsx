@@ -108,7 +108,7 @@ const Dashboard = () => {
         </motion.div>
 
         <DailyCheckIn currentStreak={profile.current_streak} onXpEarned={handleCheckInXp} />
-        <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} />
+        <StreakBadge streak={profile.current_streak} longestStreak={profile.longest_streak} totalDays={profile.current_day} />
         <AchievementBadges longestStreak={profile.longest_streak} currentStreak={profile.current_streak} />
         <DailyQuote />
         <ProgressRing percent={progressPercent} completed={completedCount} total={totalCount} />
