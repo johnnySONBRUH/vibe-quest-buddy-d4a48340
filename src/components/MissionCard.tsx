@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, BookOpen, Brain, Dumbbell, Footprints, Heart, Phone, Users, PenTool, Lightbulb, Sparkles, Droplets, Moon, Star } from 'lucide-react';
+import { Check, BookOpen, Brain, Dumbbell, Footprints, Heart, Phone, Users, PenTool, Lightbulb, Sparkles, Droplets, Moon, Star, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Tables } from '@/integrations/supabase/types';
 
