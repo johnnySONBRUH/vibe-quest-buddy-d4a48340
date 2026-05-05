@@ -18,7 +18,7 @@ const read = (): Action[] => {
 
 const write = (a: Action[]) => localStorage.setItem(KEY, JSON.stringify(a));
 
-export type AntiCheatResult = { ok: true } | { ok: false; reason: string };
+export type AntiCheatResult = { ok: boolean; reason?: string };
 
 export const checkAction = (type: string): AntiCheatResult => {
   const now = Date.now();
