@@ -174,5 +174,12 @@
     "noActivity": "Aucune activité récente",
     "checkedIn": "s'est enregistré",
     "completed": "a terminé"
+  },
+  "common": {
+    "totalDays": "jours au total sur QuestUp",
+    "confirming": "Confirmation…",
+    "cancel": "Annuler",
+    "slowDown": "Doucement — patientez un instant entre les actions.",
+    "suspicious": "Activité suspecte détectée. Veuillez attendre une minute avant d’en terminer d’autres."
   }
 }

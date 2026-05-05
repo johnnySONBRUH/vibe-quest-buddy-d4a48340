@@ -174,5 +174,12 @@
     "noActivity": "暂无好友动态",
     "checkedIn": "签到了",
     "completed": "完成了"
+  },
+  "common": {
+    "totalDays": "在 QuestUp 上的总天数",
+    "confirming": "确认中…",
+    "cancel": "取消",
+    "slowDown": "请放慢速度 — 操作之间稍等片刻。",
+    "suspicious": "检测到可疑活动。请等待一分钟后再完成任务。"
   }
 }

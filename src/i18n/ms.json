@@ -174,5 +174,12 @@
     "noActivity": "Tiada aktiviti terkini",
     "checkedIn": "telah daftar masuk",
     "completed": "telah selesai"
+  },
+  "common": {
+    "totalDays": "jumlah hari di QuestUp",
+    "confirming": "Mengesahkan…",
+    "cancel": "Batal",
+    "slowDown": "Perlahan — sila tunggu sebentar antara tindakan.",
+    "suspicious": "Aktiviti mencurigakan dikesan. Sila tunggu seminit sebelum menyelesaikan lebih banyak misi."
   }
 }
