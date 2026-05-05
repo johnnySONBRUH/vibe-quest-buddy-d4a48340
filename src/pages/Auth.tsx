@@ -34,9 +34,6 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4 relative">
-      <Button variant="ghost" size="icon" onClick={toggleTheme} className="absolute top-4 right-4 text-muted-foreground z-10">
-        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-      </Button>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div className="absolute top-20 left-10 text-primary/20" animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity }}><BookOpen size={48} /></motion.div>
