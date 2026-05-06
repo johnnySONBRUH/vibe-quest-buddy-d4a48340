@@ -21,6 +21,9 @@ const categoryTextColors: Record<string, string> = {
   study: 'text-study', exercise: 'text-exercise', social: 'text-social', creative: 'text-creative', wellness: 'text-wellness',
 };
 
+const missionKey = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+
 interface MissionCardProps {
   dailyMission: DailyMission;
   onComplete: (id: string) => void;
