@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
+import { useTheme } from '@/hooks/useTheme';
 import StreakBadge from '@/components/StreakBadge';
 import ProgressRing from '@/components/ProgressRing';
 import MissionCard from '@/components/MissionCard';
