@@ -181,5 +181,181 @@
     "cancel": "Cancelar",
     "slowDown": "Más despacio: espera un momento entre acciones.",
     "suspicious": "Actividad sospechosa detectada. Espera un minuto antes de completar más misiones."
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "Sesión de Estudio",
+      "description": "Concéntrate en estudiar para tus cursos"
+    },
+    "read_a_chapter": {
+      "title": "Leer un Capítulo",
+      "description": "Lee un capítulo de un libro de texto o un libro"
+    },
+    "practice_problems": {
+      "title": "Problemas de Práctica",
+      "description": "Resuelve problemas o ejercicios de práctica"
+    },
+    "quick_workout": {
+      "title": "Entrenamiento Rápido",
+      "description": "Haz una rutina corta de ejercicios"
+    },
+    "go_for_a_walk": {
+      "title": "Salir a Caminar",
+      "description": "Sal a caminar 20 minutos al aire libre"
+    },
+    "stretch_break": {
+      "title": "Pausa para Estirar",
+      "description": "Haz una rutina de estiramientos de 10 minutos"
+    },
+    "call_a_friend": {
+      "title": "Llamar a un Amigo",
+      "description": "Ponte al día con un amigo o familiar"
+    },
+    "join_a_study_group": {
+      "title": "Únete a un Grupo de Estudio",
+      "description": "Estudia con compañeros de clase"
+    },
+    "journal_entry": {
+      "title": "Entrada de Diario",
+      "description": "Escribe en tu diario durante 10 minutos"
+    },
+    "learn_something_new": {
+      "title": "Aprender Algo Nuevo",
+      "description": "Mira un video educativo o tutorial"
+    },
+    "meditate": {
+      "title": "Meditar",
+      "description": "Practica la atención plena durante 10 minutos"
+    },
+    "drink_water": {
+      "title": "Beber Agua",
+      "description": "Bebe al menos 8 vasos de agua hoy"
+    },
+    "sleep_early": {
+      "title": "Dormir Temprano",
+      "description": "Acuéstate antes de las 11 PM"
+    },
+    "flashcard_review": {
+      "title": "Repaso con Tarjetas Didácticas",
+      "description": "Crea o revisa 20 tarjetas didácticas sobre un tema"
+    },
+    "teach_a_concept": {
+      "title": "Enseñar un Concepto",
+      "description": "Explica un tema que aprendiste a otra persona"
+    },
+    "summarize_notes": {
+      "title": "Resumir Apuntes",
+      "description": "Escribe un resumen de una página de la clase de hoy"
+    },
+    "watch_a_lecture": {
+      "title": "Ver una Conferencia",
+      "description": "Mira una conferencia completa en línea o un video de curso"
+    },
+    "quiz_yourself": {
+      "title": "Hazte un Cuestionario",
+      "description": "Haz un cuestionario de práctica o una autoevaluación"
+    },
+    "bodyweight_circuit": {
+      "title": "Circuito de Peso Corporal",
+      "description": "Haz 3 rondas de flexiones, sentadillas y planchas"
+    },
+    "dance_break": {
+      "title": "Pausa para Bailar",
+      "description": "Baila 3 de tus canciones favoritas"
+    },
+    "stair_challenge": {
+      "title": "Reto de Escaleras",
+      "description": "Sube escaleras durante 10 minutos"
+    },
+    "yoga_session": {
+      "title": "Sesión de Yoga",
+      "description": "Sigue un video de yoga de 15 minutos"
+    },
+    "run_or_jog": {
+      "title": "Correr o Trotar",
+      "description": "Sal a correr o trotar durante 15 minutos"
+    },
+    "send_encouragement": {
+      "title": "Enviar Ánimos",
+      "description": "Envía un mensaje motivador a un compañero de clase"
+    },
+    "help_someone": {
+      "title": "Ayudar a Alguien",
+      "description": "Ayuda a un amigo con la tarea o una tarea"
+    },
+    "meet_someone_new": {
+      "title": "Conocer a Alguien Nuevo",
+      "description": "Preséntate a alguien que no conoces muy bien"
+    },
+    "family_check_in": {
+      "title": "Contacto Familiar",
+      "description": "Llama o envía un mensaje a un miembro de la familia"
+    },
+    "sketch_something": {
+      "title": "Dibujar Algo",
+      "description": "Dibuja o esboza durante 15 minutos"
+    },
+    "write_a_poem": {
+      "title": "Escribir un Poema",
+      "description": "Escribe un poema corto o una pieza de escritura creativa"
+    },
+    "photography_walk": {
+      "title": "Paseo Fotográfico",
+      "description": "Toma 5 fotos interesantes de tu entorno"
+    },
+    "brainstorm_ideas": {
+      "title": "Lluvia de Ideas",
+      "description": "Dedica 10 minutos a generar ideas para un proyecto"
+    },
+    "diy_project": {
+      "title": "Proyecto DIY",
+      "description": "Trabaja en una manualidad o proyecto práctico durante 20 minutos"
+    },
+    "deep_breathing": {
+      "title": "Respiración Profunda",
+      "description": "Haz un ejercicio de respiración profunda de 5 minutos"
+    },
+    "gratitude_list": {
+      "title": "Lista de Gratitud",
+      "description": "Escribe 5 cosas por las que estás agradecido"
+    },
+    "nature_time": {
+      "title": "Tiempo en la Naturaleza",
+      "description": "Pasa 20 minutos al aire libre en la naturaleza"
+    },
+    "healthy_meal": {
+      "title": "Comida Saludable",
+      "description": "Prepara y come una comida equilibrada y casera"
+    },
+    "digital_detox": {
+      "title": "Desintoxicación Digital",
+      "description": "Mantente alejado de las redes sociales durante 2 horas"
+    },
+    "screen_break": {
+      "title": "Descanso de Pantalla",
+      "description": "Toma un descanso de 10 minutos de todas las pantallas cada hora"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "¡Motívame!",
+      "Me siento perezoso hoy",
+      "Celebra mi progreso"
+    ],
+    "study_help": [
+      "Dame un consejo de estudio",
+      "Explica la técnica Pomodoro",
+      "Hazme un cuestionario sobre algo"
+    ],
+    "planner": [
+      "Planifica mi tarde",
+      "Ayúdame a priorizar",
+      "Crea un horario de estudio"
+    ],
+    "general": [
+      "¿Cómo hacer amigos en la universidad?",
+      "Ideas de bocadillos saludables",
+      "Ideas de proyectos creativos"
+    ]
   }
 }

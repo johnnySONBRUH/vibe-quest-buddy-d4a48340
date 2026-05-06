@@ -181,5 +181,181 @@
     "cancel": "Cancel",
     "slowDown": "Slow down — please wait a moment between actions.",
     "suspicious": "Suspicious activity detected. Please wait a minute before completing more missions."
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "Study Session",
+      "description": "Focus on studying for your courses"
+    },
+    "read_a_chapter": {
+      "title": "Read a Chapter",
+      "description": "Read a chapter from a textbook or book"
+    },
+    "practice_problems": {
+      "title": "Practice Problems",
+      "description": "Solve practice problems or exercises"
+    },
+    "quick_workout": {
+      "title": "Quick Workout",
+      "description": "Do a short exercise routine"
+    },
+    "go_for_a_walk": {
+      "title": "Go for a Walk",
+      "description": "Take a 20-minute walk outside"
+    },
+    "stretch_break": {
+      "title": "Stretch Break",
+      "description": "Do a 10-minute stretching routine"
+    },
+    "call_a_friend": {
+      "title": "Call a Friend",
+      "description": "Catch up with a friend or family member"
+    },
+    "join_a_study_group": {
+      "title": "Join a Study Group",
+      "description": "Study with classmates"
+    },
+    "journal_entry": {
+      "title": "Journal Entry",
+      "description": "Write in your journal for 10 minutes"
+    },
+    "learn_something_new": {
+      "title": "Learn Something New",
+      "description": "Watch an educational video or tutorial"
+    },
+    "meditate": {
+      "title": "Meditate",
+      "description": "Practice mindfulness for 10 minutes"
+    },
+    "drink_water": {
+      "title": "Drink Water",
+      "description": "Drink at least 8 glasses of water today"
+    },
+    "sleep_early": {
+      "title": "Sleep Early",
+      "description": "Get to bed before 11 PM"
+    },
+    "flashcard_review": {
+      "title": "Flashcard Review",
+      "description": "Create or review 20 flashcards on a topic"
+    },
+    "teach_a_concept": {
+      "title": "Teach a Concept",
+      "description": "Explain a topic you learned to someone else"
+    },
+    "summarize_notes": {
+      "title": "Summarize Notes",
+      "description": "Write a one-page summary of today's lecture"
+    },
+    "watch_a_lecture": {
+      "title": "Watch a Lecture",
+      "description": "Watch a full online lecture or course video"
+    },
+    "quiz_yourself": {
+      "title": "Quiz Yourself",
+      "description": "Take a practice quiz or self-test"
+    },
+    "bodyweight_circuit": {
+      "title": "Bodyweight Circuit",
+      "description": "Do 3 rounds of push-ups, squats, and planks"
+    },
+    "dance_break": {
+      "title": "Dance Break",
+      "description": "Dance to 3 of your favorite songs"
+    },
+    "stair_challenge": {
+      "title": "Stair Challenge",
+      "description": "Climb stairs for 10 minutes"
+    },
+    "yoga_session": {
+      "title": "Yoga Session",
+      "description": "Follow a 15-minute yoga video"
+    },
+    "run_or_jog": {
+      "title": "Run or Jog",
+      "description": "Go for a 15-minute run or jog"
+    },
+    "send_encouragement": {
+      "title": "Send Encouragement",
+      "description": "Send a motivating message to a classmate"
+    },
+    "help_someone": {
+      "title": "Help Someone",
+      "description": "Help a friend with homework or a task"
+    },
+    "meet_someone_new": {
+      "title": "Meet Someone New",
+      "description": "Introduce yourself to someone you don't know well"
+    },
+    "family_check_in": {
+      "title": "Family Check-in",
+      "description": "Call or message a family member"
+    },
+    "sketch_something": {
+      "title": "Sketch Something",
+      "description": "Draw or sketch for 15 minutes"
+    },
+    "write_a_poem": {
+      "title": "Write a Poem",
+      "description": "Write a short poem or piece of creative writing"
+    },
+    "photography_walk": {
+      "title": "Photography Walk",
+      "description": "Take 5 interesting photos of your surroundings"
+    },
+    "brainstorm_ideas": {
+      "title": "Brainstorm Ideas",
+      "description": "Spend 10 minutes brainstorming ideas for a project"
+    },
+    "diy_project": {
+      "title": "DIY Project",
+      "description": "Work on a craft or hands-on project for 20 minutes"
+    },
+    "deep_breathing": {
+      "title": "Deep Breathing",
+      "description": "Do a 5-minute deep breathing exercise"
+    },
+    "gratitude_list": {
+      "title": "Gratitude List",
+      "description": "Write down 5 things you're grateful for"
+    },
+    "nature_time": {
+      "title": "Nature Time",
+      "description": "Spend 20 minutes outdoors in nature"
+    },
+    "healthy_meal": {
+      "title": "Healthy Meal",
+      "description": "Prepare and eat a balanced, home-cooked meal"
+    },
+    "digital_detox": {
+      "title": "Digital Detox",
+      "description": "Stay off social media for 2 hours"
+    },
+    "screen_break": {
+      "title": "Screen Break",
+      "description": "Take a 10-minute break from all screens every hour"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "Motivate me!",
+      "I feel lazy today",
+      "Celebrate my progress"
+    ],
+    "study_help": [
+      "Give me a study tip",
+      "Explain Pomodoro technique",
+      "Quiz me on something"
+    ],
+    "planner": [
+      "Plan my evening",
+      "Help me prioritize",
+      "Create a study schedule"
+    ],
+    "general": [
+      "How to make friends in college?",
+      "Healthy snack ideas",
+      "Creative project ideas"
+    ]
   }
 }

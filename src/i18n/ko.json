@@ -181,5 +181,181 @@
     "cancel": "취소",
     "slowDown": "천천히 — 작업 사이에 잠시 기다려 주세요.",
     "suspicious": "의심스러운 활동이 감지되었습니다. 1분 후에 다시 시도하세요."
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "공부 세션",
+      "description": "과목 공부에 집중하세요"
+    },
+    "read_a_chapter": {
+      "title": "한 챕터 읽기",
+      "description": "교과서나 책 한 챕터를 읽으세요"
+    },
+    "practice_problems": {
+      "title": "문제 풀기",
+      "description": "연습 문제나 과제를 풀어보세요"
+    },
+    "quick_workout": {
+      "title": "빠른 운동",
+      "description": "짧은 운동 루틴을 하세요"
+    },
+    "go_for_a_walk": {
+      "title": "산책하기",
+      "description": "밖에 나가 20분 동안 산책하세요"
+    },
+    "stretch_break": {
+      "title": "스트레칭 휴식",
+      "description": "10분 스트레칭 루틴을 하세요"
+    },
+    "call_a_friend": {
+      "title": "친구에게 전화하기",
+      "description": "친구 또는 가족과 안부를 나누세요"
+    },
+    "join_a_study_group": {
+      "title": "스터디 그룹 참가",
+      "description": "반 친구들과 함께 공부하세요"
+    },
+    "journal_entry": {
+      "title": "일기 쓰기",
+      "description": "10분 동안 일기를 쓰세요"
+    },
+    "learn_something_new": {
+      "title": "새로운 것 배우기",
+      "description": "교육 비디오나 튜토리얼을 시청하세요"
+    },
+    "meditate": {
+      "title": "명상하기",
+      "description": "10분 동안 마음 챙김을 연습하세요"
+    },
+    "drink_water": {
+      "title": "물 마시기",
+      "description": "오늘 최소 8잔의 물을 마시세요"
+    },
+    "sleep_early": {
+      "title": "일찍 잠들기",
+      "description": "오후 11시 전에 잠자리에 드세요"
+    },
+    "flashcard_review": {
+      "title": "플래시카드 복습",
+      "description": "한 주제에 대해 20개의 플래시카드를 만들거나 복습하세요"
+    },
+    "teach_a_concept": {
+      "title": "개념 가르치기",
+      "description": "배운 내용을 다른 사람에게 설명하세요"
+    },
+    "summarize_notes": {
+      "title": "노트 요약하기",
+      "description": "오늘 강의 내용을 한 페이지로 요약하세요"
+    },
+    "watch_a_lecture": {
+      "title": "강의 시청",
+      "description": "온라인 강의나 코스 비디오를 시청하세요"
+    },
+    "quiz_yourself": {
+      "title": "스스로 퀴즈 풀기",
+      "description": "연습 퀴즈나 자가 테스트를 풀어보세요"
+    },
+    "bodyweight_circuit": {
+      "title": "맨몸 운동 서킷",
+      "description": "푸쉬업, 스쿼트, 플랭크를 3세트 하세요"
+    },
+    "dance_break": {
+      "title": "댄스 타임",
+      "description": "가장 좋아하는 노래 3곡에 맞춰 춤을 추세요"
+    },
+    "stair_challenge": {
+      "title": "계단 챌린지",
+      "description": "10분 동안 계단을 오르세요"
+    },
+    "yoga_session": {
+      "title": "요가 세션",
+      "description": "15분 요가 비디오를 따라하세요"
+    },
+    "run_or_jog": {
+      "title": "달리기 또는 조깅",
+      "description": "15분 동안 달리거나 조깅하세요"
+    },
+    "send_encouragement": {
+      "title": "격려 메시지 보내기",
+      "description": "반 친구에게 격려 메시지를 보내세요"
+    },
+    "help_someone": {
+      "title": "누군가 돕기",
+      "description": "친구의 숙제나 업무를 도와주세요"
+    },
+    "meet_someone_new": {
+      "title": "새로운 사람 만나기",
+      "description": "잘 모르는 사람에게 자신을 소개하세요"
+    },
+    "family_check_in": {
+      "title": "가족 안부 확인",
+      "description": "가족에게 전화하거나 메시지를 보내세요"
+    },
+    "sketch_something": {
+      "title": "스케치하기",
+      "description": "15분 동안 그리거나 스케치하세요"
+    },
+    "write_a_poem": {
+      "title": "시 쓰기",
+      "description": "짧은 시나 창의적인 글을 쓰세요"
+    },
+    "photography_walk": {
+      "title": "사진 산책",
+      "description": "주변의 흥미로운 사진 5장을 찍으세요"
+    },
+    "brainstorm_ideas": {
+      "title": "아이디어 브레인스토밍",
+      "description": "한 프로젝트를 위한 아이디어를 10분 동안 브레인스토밍하세요"
+    },
+    "diy_project": {
+      "title": "DIY 프로젝트",
+      "description": "20분 동안 공예나 직접 만드는 프로젝트를 하세요"
+    },
+    "deep_breathing": {
+      "title": "심호흡",
+      "description": "5분 동안 심호흡 운동을 하세요"
+    },
+    "gratitude_list": {
+      "title": "감사 목록",
+      "description": "감사한 것 5가지를 적으세요"
+    },
+    "nature_time": {
+      "title": "자연 시간",
+      "description": "야외 자연 속에서 20분을 보내세요"
+    },
+    "healthy_meal": {
+      "title": "건강한 식사",
+      "description": "균형 잡힌 집밥을 준비하고 드세요"
+    },
+    "digital_detox": {
+      "title": "디지털 디톡스",
+      "description": "2시간 동안 소셜 미디어를 사용하지 마세요"
+    },
+    "screen_break": {
+      "title": "화면 휴식",
+      "description": "매시간 10분씩 모든 화면에서 휴식을 취하세요"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "저를 동기 부여해주세요!",
+      "오늘 게을러요",
+      "제 발전을 축하해주세요"
+    ],
+    "study_help": [
+      "공부 팁을 알려주세요",
+      "Pomodoro 기법을 설명해주세요",
+      "무언가에 대해 퀴즈를 내주세요"
+    ],
+    "planner": [
+      "저녁 계획을 세워주세요",
+      "우선순위를 정하는 데 도움을 주세요",
+      "공부 계획을 만들어주세요"
+    ],
+    "general": [
+      "대학에서 친구를 사귀는 방법이요?",
+      "건강한 간식 아이디어",
+      "창의적인 프로젝트 아이디어"
+    ]
   }
 }

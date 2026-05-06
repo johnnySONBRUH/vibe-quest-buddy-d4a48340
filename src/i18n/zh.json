@@ -181,5 +181,181 @@
     "cancel": "取消",
     "slowDown": "请放慢速度 — 操作之间稍等片刻。",
     "suspicious": "检测到可疑活动。请等待一分钟后再完成任务。"
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "学习环节",
+      "description": "专注于课程学习"
+    },
+    "read_a_chapter": {
+      "title": "读一章书",
+      "description": "阅读课本或书籍的一章"
+    },
+    "practice_problems": {
+      "title": "练习题",
+      "description": "解决练习题或习题"
+    },
+    "quick_workout": {
+      "title": "快速锻炼",
+      "description": "进行简短的锻炼"
+    },
+    "go_for_a_walk": {
+      "title": "出门散步",
+      "description": "到户外散步20分钟"
+    },
+    "stretch_break": {
+      "title": "伸展休息",
+      "description": "进行10分钟的伸展运动"
+    },
+    "call_a_friend": {
+      "title": "给朋友打电话",
+      "description": "与朋友或家人叙旧"
+    },
+    "join_a_study_group": {
+      "title": "加入学习小组",
+      "description": "与同学一起学习"
+    },
+    "journal_entry": {
+      "title": "写日记",
+      "description": "写10分钟日记"
+    },
+    "learn_something_new": {
+      "title": "学习新知识",
+      "description": "观看教育视频或教程"
+    },
+    "meditate": {
+      "title": "冥想",
+      "description": "练习10分钟正念"
+    },
+    "drink_water": {
+      "title": "喝水",
+      "description": "今天至少喝8杯水"
+    },
+    "sleep_early": {
+      "title": "早睡",
+      "description": "晚上11点前睡觉"
+    },
+    "flashcard_review": {
+      "title": "复习抽认卡",
+      "description": "制作或复习某个主题的20张抽认卡"
+    },
+    "teach_a_concept": {
+      "title": "讲解概念",
+      "description": "向他人讲解你学到的一个概念"
+    },
+    "summarize_notes": {
+      "title": "总结笔记",
+      "description": "将今天的讲座总结成一页笔记"
+    },
+    "watch_a_lecture": {
+      "title": "观看讲座",
+      "description": "观看完整的在线讲座或课程视频"
+    },
+    "quiz_yourself": {
+      "title": "自我测验",
+      "description": "进行一次练习测验或自测"
+    },
+    "bodyweight_circuit": {
+      "title": "自重训练",
+      "description": "进行3轮俯卧撑、深蹲和平板支撑"
+    },
+    "dance_break": {
+      "title": "舞动休息",
+      "description": "随你最爱的3首歌跳舞"
+    },
+    "stair_challenge": {
+      "title": "爬楼梯挑战",
+      "description": "爬楼梯10分钟"
+    },
+    "yoga_session": {
+      "title": "瑜伽环节",
+      "description": "跟随15分钟瑜伽视频练习"
+    },
+    "run_or_jog": {
+      "title": "跑步或慢跑",
+      "description": "慢跑或慢跑15分钟"
+    },
+    "send_encouragement": {
+      "title": "送去鼓励",
+      "description": "给同学发一条鼓励的信息"
+    },
+    "help_someone": {
+      "title": "帮助他人",
+      "description": "帮助朋友完成作业或任务"
+    },
+    "meet_someone_new": {
+      "title": "认识新朋友",
+      "description": "向不太熟悉的人介绍自己"
+    },
+    "family_check_in": {
+      "title": "家人问候",
+      "description": "给家人打电话或发信息"
+    },
+    "sketch_something": {
+      "title": "涂鸦",
+      "description": "绘画或涂鸦15分钟"
+    },
+    "write_a_poem": {
+      "title": "写诗",
+      "description": "写一首短诗或创意作品"
+    },
+    "photography_walk": {
+      "title": "摄影散步",
+      "description": "为周围环境拍5张有趣的照片"
+    },
+    "brainstorm_ideas": {
+      "title": "头脑风暴",
+      "description": "花10分钟为项目集思广益"
+    },
+    "diy_project": {
+      "title": "DIY项目",
+      "description": "进行20分钟的手工或动手项目"
+    },
+    "deep_breathing": {
+      "title": "深呼吸",
+      "description": "进行5分钟深呼吸练习"
+    },
+    "gratitude_list": {
+      "title": "感恩清单",
+      "description": "写下5件值得感恩的事"
+    },
+    "nature_time": {
+      "title": "亲近自然",
+      "description": "在户外自然中待20分钟"
+    },
+    "healthy_meal": {
+      "title": "健康餐",
+      "description": "准备并吃一顿均衡的家常便饭"
+    },
+    "digital_detox": {
+      "title": "数字排毒",
+      "description": "2小时不使用社交媒体"
+    },
+    "screen_break": {
+      "title": "屏幕休息",
+      "description": "每小时从所有屏幕中休息10分钟"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "激励我！",
+      "我今天有点懒",
+      "庆祝我的进步"
+    ],
+    "study_help": [
+      "给我一个学习小窍门",
+      "解释Pomodoro技巧",
+      "考考我一些东西"
+    ],
+    "planner": [
+      "规划我的晚上",
+      "帮我设定优先事项",
+      "制定学习计划"
+    ],
+    "general": [
+      "如何在大学里交朋友？",
+      "健康的零食点子",
+      "创意项目点子"
+    ]
   }
 }

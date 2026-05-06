@@ -181,5 +181,181 @@
     "cancel": "Annuler",
     "slowDown": "Doucement — patientez un instant entre les actions.",
     "suspicious": "Activité suspecte détectée. Veuillez attendre une minute avant d’en terminer d’autres."
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "Séance d'étude",
+      "description": "Concentrez-vous sur l'étude de vos cours"
+    },
+    "read_a_chapter": {
+      "title": "Lire un chapitre",
+      "description": "Lisez un chapitre d'un manuel ou d'un livre"
+    },
+    "practice_problems": {
+      "title": "Exercices pratiques",
+      "description": "Résolvez des problèmes ou des exercices pratiques"
+    },
+    "quick_workout": {
+      "title": "Entraînement rapide",
+      "description": "Faites une courte routine d'exercices"
+    },
+    "go_for_a_walk": {
+      "title": "Faire une promenade",
+      "description": "Faites une promenade de 20 minutes dehors"
+    },
+    "stretch_break": {
+      "title": "Pause étirements",
+      "description": "Faites une routine d'étirements de 10 minutes"
+    },
+    "call_a_friend": {
+      "title": "Appeler un ami",
+      "description": "Prenez des nouvelles d'un ami ou d'un membre de votre famille"
+    },
+    "join_a_study_group": {
+      "title": "Rejoindre un groupe d'étude",
+      "description": "Étudiez avec des camarades de classe"
+    },
+    "journal_entry": {
+      "title": "Entrée de journal",
+      "description": "Écrivez dans votre journal pendant 10 minutes"
+    },
+    "learn_something_new": {
+      "title": "Apprendre quelque chose de nouveau",
+      "description": "Regardez une vidéo éducative ou un tutoriel"
+    },
+    "meditate": {
+      "title": "Méditer",
+      "description": "Pratiquez la pleine conscience pendant 10 minutes"
+    },
+    "drink_water": {
+      "title": "Boire de l'eau",
+      "description": "Buvez au moins 8 verres d'eau aujourd'hui"
+    },
+    "sleep_early": {
+      "title": "Dormir tôt",
+      "description": "Allez vous coucher avant 23 heures"
+    },
+    "flashcard_review": {
+      "title": "Révision de fiches",
+      "description": "Créez ou révisez 20 fiches sur un sujet"
+    },
+    "teach_a_concept": {
+      "title": "Enseigner un concept",
+      "description": "Expliquez un sujet appris à quelqu'un d'autre"
+    },
+    "summarize_notes": {
+      "title": "Résumer les notes",
+      "description": "Rédigez un résumé d'une page de la conférence d'aujourd'hui"
+    },
+    "watch_a_lecture": {
+      "title": "Regarder une conférence",
+      "description": "Regardez une conférence en ligne complète ou une vidéo de cours"
+    },
+    "quiz_yourself": {
+      "title": "Testez-vous",
+      "description": "Faites un quiz pratique ou un auto-test"
+    },
+    "bodyweight_circuit": {
+      "title": "Circuit au poids du corps",
+      "description": "Faites 3 séries de pompes, de squats et de planches"
+    },
+    "dance_break": {
+      "title": "Pause danse",
+      "description": "Dansez sur 3 de vos chansons préférées"
+    },
+    "stair_challenge": {
+      "title": "Défi escaliers",
+      "description": "Montez les escaliers pendant 10 minutes"
+    },
+    "yoga_session": {
+      "title": "Séance de yoga",
+      "description": "Suivez une vidéo de yoga de 15 minutes"
+    },
+    "run_or_jog": {
+      "title": "Courir ou faire du jogging",
+      "description": "Faites une course ou un jogging de 15 minutes"
+    },
+    "send_encouragement": {
+      "title": "Envoyer des encouragements",
+      "description": "Envoyez un message d'encouragement à un camarade de classe"
+    },
+    "help_someone": {
+      "title": "Aider quelqu'un",
+      "description": "Aidez un ami avec ses devoirs ou une tâche"
+    },
+    "meet_someone_new": {
+      "title": "Rencontrer quelqu'un de nouveau",
+      "description": "Présentez-vous à quelqu'un que vous ne connaissez pas bien"
+    },
+    "family_check_in": {
+      "title": "Vérification familiale",
+      "description": "Appelez ou envoyez un message à un membre de votre famille"
+    },
+    "sketch_something": {
+      "title": "Esquisser quelque chose",
+      "description": "Dessinez ou esquissez pendant 15 minutes"
+    },
+    "write_a_poem": {
+      "title": "Écrire un poème",
+      "description": "Écrivez un court poème ou une œuvre d'écriture créative"
+    },
+    "photography_walk": {
+      "title": "Promenade photographique",
+      "description": "Prenez 5 photos intéressantes de votre environnement"
+    },
+    "brainstorm_ideas": {
+      "title": "Brainstorming d'idées",
+      "description": "Passez 10 minutes à réfléchir à des idées pour un projet"
+    },
+    "diy_project": {
+      "title": "Projet DIY",
+      "description": "Travaillez sur un projet artisanal ou manuel pendant 20 minutes"
+    },
+    "deep_breathing": {
+      "title": "Respiration profonde",
+      "description": "Faites un exercice de respiration profonde de 5 minutes"
+    },
+    "gratitude_list": {
+      "title": "Liste de gratitude",
+      "description": "Notez 5 choses pour lesquelles vous êtes reconnaissant"
+    },
+    "nature_time": {
+      "title": "Temps nature",
+      "description": "Passez 20 minutes dehors dans la nature"
+    },
+    "healthy_meal": {
+      "title": "Repas sain",
+      "description": "Préparez et mangez un repas équilibré et fait maison"
+    },
+    "digital_detox": {
+      "title": "Détox numérique",
+      "description": "Restez hors des réseaux sociaux pendant 2 heures"
+    },
+    "screen_break": {
+      "title": "Pause écran",
+      "description": "Faites une pause de 10 minutes de tous les écrans toutes les heures"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "Motive-moi!",
+      "Je me sens paresseux aujourd'hui",
+      "Célèbre mes progrès"
+    ],
+    "study_help": [
+      "Donne-moi une astuce d'étude",
+      "Explique la technique Pomodoro",
+      "Interroge-moi sur quelque chose"
+    ],
+    "planner": [
+      "Planifie ma soirée",
+      "Aide-moi à prioriser",
+      "Crée un emploi du temps d'étude"
+    ],
+    "general": [
+      "Comment se faire des amis à l'université?",
+      "Idées de collations saines",
+      "Idées de projets créatifs"
+    ]
   }
 }

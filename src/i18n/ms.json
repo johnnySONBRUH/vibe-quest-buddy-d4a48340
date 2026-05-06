@@ -181,5 +181,181 @@
     "cancel": "Batal",
     "slowDown": "Perlahan — sila tunggu sebentar antara tindakan.",
     "suspicious": "Aktiviti mencurigakan dikesan. Sila tunggu seminit sebelum menyelesaikan lebih banyak misi."
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "Sesi Belajar",
+      "description": "Tumpukan perhatian untuk belajar kursus anda"
+    },
+    "read_a_chapter": {
+      "title": "Baca Satu Bab",
+      "description": "Baca satu bab dari buku teks atau buku"
+    },
+    "practice_problems": {
+      "title": "Latih Tubi Soalan",
+      "description": "Selesaikan soalan praktis atau latihan"
+    },
+    "quick_workout": {
+      "title": "Senaman Cepat",
+      "description": "Lakukan rutin senaman ringkas"
+    },
+    "go_for_a_walk": {
+      "title": "Pergi Berjalan Kaki",
+      "description": "Berjalan kaki selama 20 minit di luar"
+    },
+    "stretch_break": {
+      "title": "Rehat Regangan",
+      "description": "Lakukan rutin regangan 10 minit"
+    },
+    "call_a_friend": {
+      "title": "Hubungi Rakan",
+      "description": "Berhubung dengan rakan atau ahli keluarga"
+    },
+    "join_a_study_group": {
+      "title": "Sertai Kumpulan Belajar",
+      "description": "Belajar bersama rakan sekelas"
+    },
+    "journal_entry": {
+      "title": "Entri Jurnal",
+      "description": "Tulis dalam jurnal anda selama 10 minit"
+    },
+    "learn_something_new": {
+      "title": "Belajar Sesuatu Yang Baru",
+      "description": "Tonton video pendidikan atau tutorial"
+    },
+    "meditate": {
+      "title": "Bermeditasi",
+      "description": "Latih kesedaran diri selama 10 minit"
+    },
+    "drink_water": {
+      "title": "Minum Air",
+      "description": "Minum sekurang-kurangnya 8 gelas air hari ini"
+    },
+    "sleep_early": {
+      "title": "Tidur Awal",
+      "description": "Tidur sebelum jam 11 malam"
+    },
+    "flashcard_review": {
+      "title": "Semakan Flashcard",
+      "description": "Buat atau semak 20 flashcard mengenai sesuatu topik"
+    },
+    "teach_a_concept": {
+      "title": "Ajar Konsep",
+      "description": "Terangkan topik yang anda pelajari kepada orang lain"
+    },
+    "summarize_notes": {
+      "title": "Ringkaskan Nota",
+      "description": "Tulis ringkasan satu muka surat bagi kuliah hari ini"
+    },
+    "watch_a_lecture": {
+      "title": "Tonton Kuliah",
+      "description": "Tonton kuliah dalam talian penuh atau video kursus"
+    },
+    "quiz_yourself": {
+      "title": "Kuiz Diri Sendiri",
+      "description": "Ambil kuiz latihan atau ujian kendiri"
+    },
+    "bodyweight_circuit": {
+      "title": "Litar Berat Badan",
+      "description": "Lakukan 3 pusingan tekan tubi, cangkung, dan plank"
+    },
+    "dance_break": {
+      "title": "Rehat Menari",
+      "description": "Menari mengikut 3 lagu kegemaran anda"
+    },
+    "stair_challenge": {
+      "title": "Cabaran Tangga",
+      "description": "Panjat tangga selama 10 minit"
+    },
+    "yoga_session": {
+      "title": "Sesi Yoga",
+      "description": "Ikuti video yoga 15 minit"
+    },
+    "run_or_jog": {
+      "title": "Lari Atau Berjoging",
+      "description": "Pergi berlari atau berjoging selama 15 minit"
+    },
+    "send_encouragement": {
+      "title": "Hantar Galakan",
+      "description": "Hantar mesej motivasi kepada rakan sekelas"
+    },
+    "help_someone": {
+      "title": "Bantu Seseorang",
+      "description": "Bantu rakan dengan kerja rumah atau tugasan"
+    },
+    "meet_someone_new": {
+      "title": "Temui Seseorang Yang Baru",
+      "description": "Perkenalkan diri anda kepada seseorang yang anda tidak kenal rapat"
+    },
+    "family_check_in": {
+      "title": "Hubungi Keluarga",
+      "description": "Telefon atau hantar mesej kepada ahli keluarga"
+    },
+    "sketch_something": {
+      "title": "Lukis Sesuatu",
+      "description": "Melukis atau melakar selama 15 minit"
+    },
+    "write_a_poem": {
+      "title": "Tulis Puisi",
+      "description": "Tulis puisi pendek atau karya penulisan kreatif"
+    },
+    "photography_walk": {
+      "title": "Jalan Kaki Fotografi",
+      "description": "Ambil 5 gambar menarik persekitaran anda"
+    },
+    "brainstorm_ideas": {
+      "title": "Brainstorm Idea",
+      "description": "Luangkan 10 minit untuk menghasilkan idea projek"
+    },
+    "diy_project": {
+      "title": "Projek DIY",
+      "description": "Lakukan kraf atau projek praktikal selama 20 minit"
+    },
+    "deep_breathing": {
+      "title": "Bernafas Dalam",
+      "description": "Lakukan senaman pernafasan dalam selama 5 minit"
+    },
+    "gratitude_list": {
+      "title": "Senarai Kesyukuran",
+      "description": "Tulis 5 perkara yang anda syukuri"
+    },
+    "nature_time": {
+      "title": "Masa Alam",
+      "description": "Luangkan 20 minit di luar dalam alam semula jadi"
+    },
+    "healthy_meal": {
+      "title": "Makanan Sihat",
+      "description": "Sediakan dan makan hidangan seimbang, yang dimasak di rumah"
+    },
+    "digital_detox": {
+      "title": "Detoks Digital",
+      "description": "Jauhi media sosial selama 2 jam"
+    },
+    "screen_break": {
+      "title": "Rehat Skrin",
+      "description": "Ambil rehat 10 minit dari semua skrin setiap jam"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "Motivasikan saya!",
+      "Saya rasa malas hari ini",
+      "Raikan kemajuan saya"
+    ],
+    "study_help": [
+      "Beri saya tip belajar",
+      "Terangkan teknik Pomodoro",
+      "Kuiz saya tentang sesuatu"
+    ],
+    "planner": [
+      "Rancanglah malam saya",
+      "Bantu saya mengutamakan",
+      "Buat jadual belajar"
+    ],
+    "general": [
+      "Bagaimana untuk berkawan di kolej?",
+      "Idea snek sihat",
+      "Idea projek kreatif"
+    ]
   }
 }
