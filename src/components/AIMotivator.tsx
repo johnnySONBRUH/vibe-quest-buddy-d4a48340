@@ -126,7 +126,7 @@ const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMo
                   <Sparkles className="mx-auto text-primary mb-2" size={28} />
                   <p className="text-sm text-muted-foreground mb-3">{t('ai.greeting')}</p>
                   <div className="flex flex-wrap gap-1.5 justify-center">
-                    {modePrompts[mode].map(p => (
+                    {(t(`aiPrompts.${modePromptKeys[mode]}`, { returnObjects: true, defaultValue: [] }) as string[]).map(p => (
                       <button key={p} onClick={() => sendMessage(p)} className="text-xs px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors">{p}</button>
                     ))}
                   </div>
