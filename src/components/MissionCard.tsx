@@ -87,8 +87,8 @@ const MissionCard = ({ dailyMission, onComplete, index }: MissionCardProps) => {
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className={`font-semibold ${completed ? 'line-through text-muted-foreground' : 'text-foreground'}`}>{mission.title}</h3>
-          <p className="text-sm text-muted-foreground truncate">{mission.description}</p>
+          <h3 className={`font-semibold ${completed ? 'line-through text-muted-foreground' : 'text-foreground'}`}>{t(`missions_db.${missionKey(mission.title)}.title`, { defaultValue: mission.title })}</h3>
+          <p className="text-sm text-muted-foreground truncate">{t(`missions_db.${missionKey(mission.title)}.description`, { defaultValue: mission.description })}</p>
           <div className="flex items-center gap-3 mt-1">
             <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[cat]} ${categoryTextColors[cat]}`}>
               {t(`categories.${cat}`)}
