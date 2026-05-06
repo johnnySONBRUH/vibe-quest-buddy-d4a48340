@@ -9,11 +9,11 @@ import ReactMarkdown from 'react-markdown';
 interface Message { role: 'user' | 'assistant'; content: string; }
 type AIMode = 'coach' | 'study-help' | 'planner' | 'general';
 
-const modePrompts: Record<AIMode, string[]> = {
-  coach: ['Motivate me!', 'I feel lazy today', 'Celebrate my progress'],
-  'study-help': ['Give me a study tip', 'Explain Pomodoro technique', 'Quiz me on something'],
-  planner: ['Plan my evening', 'Help me prioritize', 'Create a study schedule'],
-  general: ['How to make friends in college?', 'Healthy snack ideas', 'Creative project ideas'],
+const modePromptKeys: Record<AIMode, string> = {
+  coach: 'coach',
+  'study-help': 'study_help',
+  planner: 'planner',
+  general: 'general',
 };
 
 interface AIMotivatorProps { streak: number; completedMissions: number; totalMissions: number; totalXp: number; }
