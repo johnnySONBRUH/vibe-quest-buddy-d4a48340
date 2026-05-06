@@ -24,6 +24,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 const Dashboard = () => {
   const { t } = useTranslation();
   const { signOut } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent, fetchProfile } = useMissions();
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
