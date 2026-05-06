@@ -9,11 +9,11 @@ import ReactMarkdown from 'react-markdown';
 interface Message { role: 'user' | 'assistant'; content: string; }
 type AIMode = 'coach' | 'study-help' | 'planner' | 'general';
 
-const modePrompts: Record<AIMode, string[]> = {
-  coach: ['Motivate me!', 'I feel lazy today', 'Celebrate my progress'],
-  'study-help': ['Give me a study tip', 'Explain Pomodoro technique', 'Quiz me on something'],
-  planner: ['Plan my evening', 'Help me prioritize', 'Create a study schedule'],
-  general: ['How to make friends in college?', 'Healthy snack ideas', 'Creative project ideas'],
+const modePromptKeys: Record<AIMode, string> = {
+  coach: 'coach',
+  'study-help': 'study_help',
+  planner: 'planner',
+  general: 'general',
 };
 
 interface AIMotivatorProps { streak: number; completedMissions: number; totalMissions: number; totalXp: number; }
@@ -21,7 +21,7 @@ interface AIMotivatorProps { streak: number; completedMissions: number; totalMis
 const STREAM_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-motivator`;
 
 const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMotivatorProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -44,7 +44,7 @@ const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMo
       const resp = await fetch(STREAM_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}` },
-        body: JSON.stringify({ messages: newMessages, context: { streak, completedMissions, totalMissions, totalXp }, mode }),
+        body: JSON.stringify({ messages: newMessages, context: { streak, completedMissions, totalMissions, totalXp }, mode, language: i18n.language }),
       });
       if (!resp.ok) { const errData = await resp.json().catch(() => ({})); throw new Error(errData.error || 'Failed to connect'); }
       if (!resp.body) throw new Error('No response body');
@@ -126,7 +126,7 @@ const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMo
                   <Sparkles className="mx-auto text-primary mb-2" size={28} />
                   <p className="text-sm text-muted-foreground mb-3">{t('ai.greeting')}</p>
                   <div className="flex flex-wrap gap-1.5 justify-center">
-                    {modePrompts[mode].map(p => (
+                    {(t(`aiPrompts.${modePromptKeys[mode]}`, { returnObjects: true, defaultValue: [] }) as string[]).map(p => (
                       <button key={p} onClick={() => sendMessage(p)} className="text-xs px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors">{p}</button>
                     ))}
                   </div>

@@ -16,15 +16,23 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages, context, mode = "coach" } = await req.json();
+    const { messages, context, mode = "coach", language = "en" } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY not configured");
 
     const modeInstructions = modePrompts[mode] || modePrompts.coach;
 
+    const langNames: Record<string, string> = {
+      en: "English", zh: "Simplified Chinese", ms: "Bahasa Melayu",
+      ko: "Korean", ja: "Japanese", es: "Spanish", fr: "French", ru: "Russian",
+    };
+    const langName = langNames[language] || "English";
+
     const systemPrompt = `${modeInstructions}
 
 You are part of QuestUp, a gamified student productivity app.
+
+IMPORTANT: Always respond in ${langName}, regardless of the language the user writes in.
 
 Context about the student:
 - Current streak: ${context?.streak || 0} days

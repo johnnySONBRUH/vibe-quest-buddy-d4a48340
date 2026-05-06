@@ -181,5 +181,181 @@
     "cancel": "キャンセル",
     "slowDown": "少しお待ちください — 操作の間隔を空けてください。",
     "suspicious": "不審な活動が検出されました。1 分後に再試行してください。"
+  },
+  "missions_db": {
+    "study_session": {
+      "title": "勉強会",
+      "description": "授業の勉強に集中しましょう"
+    },
+    "read_a_chapter": {
+      "title": "章を読む",
+      "description": "教科書や本を1章読みましょう"
+    },
+    "practice_problems": {
+      "title": "問題演習",
+      "description": "練習問題や演習を解きましょう"
+    },
+    "quick_workout": {
+      "title": "簡単な運動",
+      "description": "短い運動ルーティンをしましょう"
+    },
+    "go_for_a_walk": {
+      "title": "散歩に出かける",
+      "description": "外を20分間歩きましょう"
+    },
+    "stretch_break": {
+      "title": "ストレッチ休憩",
+      "description": "10分間のストレッチルーティンをしましょう"
+    },
+    "call_a_friend": {
+      "title": "友達に電話する",
+      "description": "友達や家族と近況報告をしましょう"
+    },
+    "join_a_study_group": {
+      "title": "勉強会に参加する",
+      "description": "クラスメートと一緒に勉強しましょう"
+    },
+    "journal_entry": {
+      "title": "日記を書く",
+      "description": "10分間日記を書きましょう"
+    },
+    "learn_something_new": {
+      "title": "何か新しいことを学ぶ",
+      "description": "教育的な動画やチュートリアルを見ましょう"
+    },
+    "meditate": {
+      "title": "瞑想する",
+      "description": "10分間瞑想を実践しましょう"
+    },
+    "drink_water": {
+      "title": "水を飲む",
+      "description": "今日は少なくともコップ8杯の水を飲みましょう"
+    },
+    "sleep_early": {
+      "title": "早めに寝る",
+      "description": "午後11時までに寝ましょう"
+    },
+    "flashcard_review": {
+      "title": "フラッシュカード復習",
+      "description": "あるトピックについて20枚のフラッシュカードを作成または復習しましょう"
+    },
+    "teach_a_concept": {
+      "title": "概念を教える",
+      "description": "学んだトピックを他の人に説明してみましょう"
+    },
+    "summarize_notes": {
+      "title": "メモをまとめる",
+      "description": "今日の講義の要約を1ページにまとめましょう"
+    },
+    "watch_a_lecture": {
+      "title": "講義を見る",
+      "description": "オンライン講義やコース動画を最後まで見ましょう"
+    },
+    "quiz_yourself": {
+      "title": "自己クイズ",
+      "description": "練習クイズや自己テストをしてみましょう"
+    },
+    "bodyweight_circuit": {
+      "title": "自重サーキット",
+      "description": "腕立て伏せ、スクワット、プランクを3セットしましょう"
+    },
+    "dance_break": {
+      "title": "ダンスブレイク",
+      "description": "お気に入りの曲3曲で踊りましょう"
+    },
+    "stair_challenge": {
+      "title": "階段チャレンジ",
+      "description": "10分間階段を上りましょう"
+    },
+    "yoga_session": {
+      "title": "ヨガセッション",
+      "description": "15分間のヨガ動画を体験しましょう"
+    },
+    "run_or_jog": {
+      "title": "走るかジョギングする",
+      "description": "15分間走るかジョギングをしましょう"
+    },
+    "send_encouragement": {
+      "title": "励ましのメッセージを送る",
+      "description": "クラスメートに励ましのメッセージを送りましょう"
+    },
+    "help_someone": {
+      "title": "誰かを助ける",
+      "description": "友達の宿題や作業を手伝いましょう"
+    },
+    "meet_someone_new": {
+      "title": "新しい人に会う",
+      "description": "あまり知らない人に自己紹介してみましょう"
+    },
+    "family_check_in": {
+      "title": "家族に連絡する",
+      "description": "家族に電話やメッセージを送りましょう"
+    },
+    "sketch_something": {
+      "title": "何かスケッチする",
+      "description": "15分間絵を描いたりスケッチしたりしましょう"
+    },
+    "write_a_poem": {
+      "title": "詩を書く",
+      "description": "短い詩や創作文を書きましょう"
+    },
+    "photography_walk": {
+      "title": "写真散歩",
+      "description": "周囲の面白い写真を5枚撮りましょう"
+    },
+    "brainstorm_ideas": {
+      "title": "アイデアをブレインストーミングする",
+      "description": "プロジェクトのアイデアを10分間ブレインストーミングしましょう"
+    },
+    "diy_project": {
+      "title": "DIYプロジェクト",
+      "description": "20分間クラフトや手作業のプロジェクトに取り組みましょう"
+    },
+    "deep_breathing": {
+      "title": "深呼吸",
+      "description": "5分間の深呼吸エクササイズをしましょう"
+    },
+    "gratitude_list": {
+      "title": "感謝リスト",
+      "description": "感謝していることを5つ書き出しましょう"
+    },
+    "nature_time": {
+      "title": "自然の中で過ごす",
+      "description": "屋外で20分間自然の中で過ごしましょう"
+    },
+    "healthy_meal": {
+      "title": "ヘルシーな食事",
+      "description": "バランスの取れた手作りの食事を準備して食べましょう"
+    },
+    "digital_detox": {
+      "title": "デジタルデトックス",
+      "description": "2時間ソーシャルメディアから離れてみましょう"
+    },
+    "screen_break": {
+      "title": "スクリーン休憩",
+      "description": "1時間ごとにすべてのスクリーンから10分間休憩を取りましょう"
+    }
+  },
+  "aiPrompts": {
+    "coach": [
+      "やる気を出させて！",
+      "今日はだるいな",
+      "進捗を祝って！"
+    ],
+    "study_help": [
+      "勉強のヒントを教えて",
+      "Pomodoroテクニックを説明して",
+      "何か質問して"
+    ],
+    "planner": [
+      "夜の予定を立てて",
+      "優先順位付けを手伝って",
+      "学習スケジュールを作成して"
+    ],
+    "general": [
+      "大学で友達を作るには？",
+      "健康的なおやつのアイデア",
+      "クリエイティブなプロジェクトのアイデア"
+    ]
   }
 }
