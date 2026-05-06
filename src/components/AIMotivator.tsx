@@ -21,7 +21,7 @@ interface AIMotivatorProps { streak: number; completedMissions: number; totalMis
 const STREAM_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-motivator`;
 
 const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMotivatorProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -44,7 +44,7 @@ const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMo
       const resp = await fetch(STREAM_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}` },
-        body: JSON.stringify({ messages: newMessages, context: { streak, completedMissions, totalMissions, totalXp }, mode }),
+        body: JSON.stringify({ messages: newMessages, context: { streak, completedMissions, totalMissions, totalXp }, mode, language: i18n.language }),
       });
       if (!resp.ok) { const errData = await resp.json().catch(() => ({})); throw new Error(errData.error || 'Failed to connect'); }
       if (!resp.body) throw new Error('No response body');
