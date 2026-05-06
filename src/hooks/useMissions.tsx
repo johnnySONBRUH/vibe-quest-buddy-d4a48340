@@ -109,26 +109,31 @@ export const useMissions = () => {
 
     // Update profile
     const newXp = profile.total_xp + xpEarned;
+    const lastDateStr = profile.last_completion_date
+      ? String(profile.last_completion_date).slice(0, 10)
+      : null;
     const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-    const wasYesterday = profile.last_completion_date === yesterdayStr;
-    const alreadyCompletedToday = profile.last_completion_date === today;
-    let newStreak = profile.current_streak;
-    if (allDone && !alreadyCompletedToday) {
-      newStreak = wasYesterday ? profile.current_streak + 1 : 1;
+    const isFirstCompletionToday = lastDateStr !== today;
+    const wasYesterday = lastDateStr === yesterdayStr;
+
+    let updates: Partial<Tables<'profiles'>> = { total_xp: newXp };
+
+    if (isFirstCompletionToday) {
+      // First mission completed today: bump streak and total active days
+      const newStreak = wasYesterday ? profile.current_streak + 1 : 1;
+      updates = {
+        ...updates,
+        current_streak: newStreak,
+        longest_streak: Math.max(newStreak, profile.longest_streak),
+        last_completion_date: today,
+        current_day: profile.current_day + 1,
+      };
     }
 
-    const updates = allDone
-      ? {
-          total_xp: newXp,
-          current_streak: newStreak,
-          longest_streak: Math.max(newStreak, profile.longest_streak),
-          last_completion_date: today,
-          current_day: profile.current_day + 1,
-        }
-      : { total_xp: newXp };
-
     if (allDone) {
-      toast.success('🔥 All missions complete! Streak updated!');
+      toast.success('🔥 All missions complete!');
+    } else if (isFirstCompletionToday) {
+      toast.success(`+${xpEarned} XP — streak updated!`);
     } else {
       toast.success(`+${xpEarned} XP earned!`);
     }
