@@ -83,6 +83,7 @@ const Dashboard = () => {
           </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground" aria-label="Toggle theme">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowSettings(true)} className="text-muted-foreground"><Settings size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground"><LogOut size={20} /></Button>
