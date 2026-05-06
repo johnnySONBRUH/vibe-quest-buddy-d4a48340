@@ -52,7 +52,7 @@ const AchievementBadges = ({ longestStreak, currentStreak }: AchievementBadgesPr
           return (
             <motion.div key={milestone.days} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.05 * i }} className="flex flex-col items-center gap-1.5 group relative">
               <motion.div
-                className={`relative w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${unlocked ? 'border-transparent shadow-lg' : 'border-dashed border-muted-foreground/30 bg-muted/50'}`}
+                className={`relative w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${unlocked ? 'border-transparent shadow-lg' : 'border-dashed border-muted-foreground/50 bg-muted'}`}
                 style={unlocked ? { background: `linear-gradient(135deg, ${milestone.color}, ${milestone.color}dd)`, boxShadow: `0 4px 15px ${milestone.glow}` } : {}}
                 animate={justUnlocked ? { scale: [1, 1.15, 1], boxShadow: [`0 0 0px ${milestone.glow}`, `0 0 25px ${milestone.glow}`, `0 0 10px ${milestone.glow}`] } : {}}
                 transition={justUnlocked ? { duration: 1.5, repeat: Infinity } : {}}
