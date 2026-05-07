@@ -110,7 +110,17 @@
     "getStarted": "开始吧！🚀",
     "next": "下一步",
     "back": "返回",
-    "skip": "跳过教程"
+    "skip": "跳过教程",
+    "customMissions": "Create Your Own",
+    "customMissionsDesc": "Add up to 3 personal missions tailored to your goals. They reset every day along with your daily missions.",
+    "checkIn": "Daily Check-In",
+    "checkInDesc": "Log in every day to claim a bonus XP reward — the longer your streak, the bigger the bonus!",
+    "progress": "Track Your Progress",
+    "progressDesc": "Open the progress dashboard to see your XP, missions completed, and streak history over the past 7 days.",
+    "leaderboard": "Climb the Ranks",
+    "leaderboardDesc": "Compete with other questers on the global leaderboard, ranked by total XP earned.",
+    "friends": "Connect with Friends",
+    "friendsDesc": "Add friends to follow their activity, cheer them on, and stay motivated together."
   },
   "ai": {
     "title": "QuestUp AI",
