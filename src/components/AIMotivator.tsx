@@ -97,13 +97,13 @@ const AIMotivator = ({ streak, completedMissions, totalMissions, totalXp }: AIMo
 
   return (
     <>
-      <motion.button onClick={() => setOpen(true)} className="fixed bottom-6 right-6 w-14 h-14 rounded-full gradient-primary shadow-lg flex items-center justify-center z-50" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+      <motion.button onClick={() => setOpen(true)} className="fixed bottom-6 left-6 w-14 h-14 rounded-full gradient-primary shadow-lg flex items-center justify-center z-50" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
         <MessageCircle className="text-primary-foreground" size={24} />
       </motion.button>
 
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.95 }} className="fixed bottom-24 right-4 left-4 sm:left-auto sm:w-[380px] max-h-[520px] rounded-2xl shadow-2xl bg-card border border-border flex flex-col z-50 overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.95 }} className="fixed bottom-24 left-4 right-4 sm:right-auto sm:w-[380px] max-h-[520px] rounded-2xl shadow-2xl bg-card border border-border flex flex-col z-50 overflow-hidden">
             <div className="gradient-primary p-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Sparkles className="text-primary-foreground" size={18} />
