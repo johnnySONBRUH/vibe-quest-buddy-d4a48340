@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon, Crown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
@@ -18,6 +18,7 @@ import CustomMissions from '@/components/CustomMissions';
 import Progress from '@/pages/Progress';
 import MissionHistory from '@/pages/MissionHistory';
 import ProfileSettings from '@/pages/ProfileSettings';
+import Leaderboard from '@/pages/Leaderboard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -32,8 +33,10 @@ const Dashboard = () => {
   const [showProgress, setShowProgress] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState('all');
 
+  if (showLeaderboard) return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
   if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} />;
   if (showHistory) return <MissionHistory onBack={() => setShowHistory(false)} />;
   if (showProgress) return <Progress onBack={() => setShowProgress(false)} />;
@@ -83,6 +86,7 @@ const Dashboard = () => {
           </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
+            <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground" aria-label="Leaderboard"><Crown size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground" aria-label="Toggle theme">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowSettings(true)} className="text-muted-foreground"><Settings size={20} /></Button>
