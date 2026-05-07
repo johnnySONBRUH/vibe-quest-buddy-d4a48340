@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Camera, User, Bell, Save, Loader2, Globe } from 'lucide-react';
+import { ArrowLeft, Camera, User, Save, Loader2, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Switch } from '@/components/ui/switch';
+
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -11,11 +11,6 @@ import { toast } from '@/hooks/use-toast';
 import { useTranslation } from 'react-i18next';
 import { languages } from '@/i18n';
 
-interface NotificationPrefs {
-  daily_reminder: boolean;
-  streak_warning: boolean;
-  achievements: boolean;
-}
 
 const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
   const { t, i18n } = useTranslation();
@@ -24,20 +19,16 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
 
   const [displayName, setDisplayName] = useState('');
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-  const [notifications, setNotifications] = useState<NotificationPrefs>({
-    daily_reminder: true, streak_warning: true, achievements: true,
-  });
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (!user) return;
-    supabase.from('profiles').select('display_name, avatar_url, notification_preferences').eq('user_id', user.id).single().then(({ data }) => {
+    supabase.from('profiles').select('display_name, avatar_url').eq('user_id', user.id).single().then(({ data }) => {
       if (data) {
         setDisplayName(data.display_name || '');
         setAvatarUrl(data.avatar_url);
-        if (data.notification_preferences) setNotifications(data.notification_preferences as unknown as NotificationPrefs);
         setLoaded(true);
       }
     });
@@ -75,7 +66,6 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
     setSaving(true);
     const { error } = await supabase.from('profiles').update({
       display_name: trimmed, avatar_url: avatarUrl,
-      notification_preferences: notifications as unknown as import('@/integrations/supabase/types').Json,
     }).eq('user_id', user.id);
     setSaving(false);
     if (error) {
@@ -143,27 +133,6 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
               </button>
             ))}
           </div>
-        </motion.div>
-
-        {/* Notifications */}
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card rounded-2xl p-6 space-y-5">
-          <div className="flex items-center gap-2">
-            <Bell className="text-primary" size={20} />
-            <h3 className="text-base font-bold text-foreground">{t('settings.notifications')}</h3>
-          </div>
-          {[
-            { key: 'daily_reminder' as const, label: t('settings.dailyReminders'), desc: t('settings.dailyRemindersDesc') },
-            { key: 'streak_warning' as const, label: t('settings.streakWarnings'), desc: t('settings.streakWarningsDesc') },
-            { key: 'achievements' as const, label: t('settings.achievementsNotif'), desc: t('settings.achievementsNotifDesc') },
-          ].map(({ key, label, desc }) => (
-            <div key={key} className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-foreground">{label}</p>
-                <p className="text-xs text-muted-foreground">{desc}</p>
-              </div>
-              <Switch checked={notifications[key]} onCheckedChange={(checked) => setNotifications((prev) => ({ ...prev, [key]: checked }))} />
-            </div>
-          ))}
         </motion.div>
 
         {/* Save */}
