@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon, Crown } from 'lucide-react';
+import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon, Crown, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
@@ -86,6 +86,7 @@ const Dashboard = () => {
           </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
+            <Button variant="ghost" size="icon" onClick={() => setShowTutorial(true)} className="text-muted-foreground" aria-label="Tutorial"><HelpCircle size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground" aria-label="Leaderboard"><Crown size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground" aria-label="Toggle theme">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</Button>
             <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
