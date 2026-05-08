@@ -159,7 +159,7 @@
     "descPlaceholder": "Description (optional)",
     "create": "Create Mission",
     "created": "Custom mission created! ✨",
-    "maxReached": "Max 3 active custom missions",
+    "maxReached": "Max 10 active custom missions",
     "empty": "No custom missions yet. Create your own!"
   },
   "friends": {

@@ -159,7 +159,7 @@
     "descPlaceholder": "描述（可选）",
     "create": "创建任务",
     "created": "自定义任务已创建！✨",
-    "maxReached": "最多3个活跃自定义任务",
+    "maxReached": "最多10个活跃自定义任务",
     "empty": "还没有自定义任务，创建你自己的吧！"
   },
   "friends": {

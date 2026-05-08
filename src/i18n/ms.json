@@ -159,7 +159,7 @@
     "descPlaceholder": "Penerangan (pilihan)",
     "create": "Cipta Misi",
     "created": "Misi kustom dicipta! ✨",
-    "maxReached": "Maksimum 3 misi kustom aktif",
+    "maxReached": "Maksimum 10 misi kustom aktif",
     "empty": "Belum ada misi kustom. Cipta sendiri!"
   },
   "friends": {

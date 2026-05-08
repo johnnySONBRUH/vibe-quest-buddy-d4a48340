@@ -159,7 +159,7 @@
     "descPlaceholder": "Descripción (opcional)",
     "create": "Crear Misión",
     "created": "¡Misión personalizada creada! ✨",
-    "maxReached": "Máximo 3 misiones personalizadas activas",
+    "maxReached": "Máximo 10 misiones personalizadas activas",
     "empty": "Sin misiones personalizadas. ¡Crea las tuyas!"
   },
   "friends": {

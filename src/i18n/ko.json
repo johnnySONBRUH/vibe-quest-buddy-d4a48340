@@ -159,7 +159,7 @@
     "descPlaceholder": "설명 (선택)",
     "create": "미션 만들기",
     "created": "커스텀 미션 생성! ✨",
-    "maxReached": "최대 3개 활성 커스텀 미션",
+    "maxReached": "최대 10개 활성 커스텀 미션",
     "empty": "커스텀 미션이 없습니다. 직접 만들어보세요!"
   },
   "friends": {

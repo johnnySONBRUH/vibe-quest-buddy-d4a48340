@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Trash2, Check, Pencil, X, Sparkles } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { checkAction, recordAction } from '@/lib/antiCheat';
+
+const COOLDOWN_MS = 5000;
+const MAX_CUSTOM_MISSIONS = 10;
 
 interface CustomMission {
   id: string;
@@ -61,7 +64,7 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
   const handleCreate = async () => {
     if (!user || !title.trim()) return;
     const activeMissions = missions.filter(m => m.is_active);
-    if (activeMissions.length >= 3) {
+    if (activeMissions.length >= MAX_CUSTOM_MISSIONS) {
       toast.error(t('customMissions.maxReached'));
       return;
     }
@@ -78,8 +81,15 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
     toast.success(t('customMissions.created'));
   };
 
-  const handleComplete = async (mission: CustomMission) => {
-    if (!user || mission.completed_today) return;
+  const [pendingId, setPendingId] = useState<string | null>(null);
+  const [progress, setProgress] = useState(0);
+  const timerRef = useRef<number | null>(null);
+  const startRef = useRef<number>(0);
+
+  useEffect(() => () => { if (timerRef.current) window.clearInterval(timerRef.current); }, []);
+
+  const finalizeComplete = async (mission: CustomMission) => {
+    if (!user) return;
     const guard = checkAction('mission_complete');
     if (!guard.ok) { toast.error(guard.reason); return; }
     recordAction('mission_complete');
@@ -88,7 +98,6 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
       last_reset_date: today,
     }).eq('id', mission.id);
 
-    // Add XP
     const { data: profile } = await supabase.from('profiles').select('total_xp').eq('user_id', user.id).single();
     if (profile) {
       await supabase.from('profiles').update({ total_xp: profile.total_xp + mission.xp_reward }).eq('user_id', user.id);
@@ -97,6 +106,31 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
     onXpEarned(mission.xp_reward);
     toast.success(`+${mission.xp_reward} XP!`);
     fetchMissions();
+  };
+
+  const startCooldown = (mission: CustomMission) => {
+    if (mission.completed_today || pendingId) return;
+    setPendingId(mission.id);
+    setProgress(0);
+    startRef.current = Date.now();
+    timerRef.current = window.setInterval(() => {
+      const elapsed = Date.now() - startRef.current;
+      const pct = Math.min(100, (elapsed / COOLDOWN_MS) * 100);
+      setProgress(pct);
+      if (elapsed >= COOLDOWN_MS) {
+        if (timerRef.current) window.clearInterval(timerRef.current);
+        setPendingId(null);
+        setProgress(0);
+        finalizeComplete(mission);
+      }
+    }, 50);
+  };
+
+  const cancelCooldown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (timerRef.current) window.clearInterval(timerRef.current);
+    setPendingId(null);
+    setProgress(0);
   };
 
   const handleDelete = async (id: string) => {
@@ -142,24 +176,41 @@ const CustomMissions = ({ onXpEarned }: CustomMissionsProps) => {
         )}
       </AnimatePresence>
 
-      {missions.map((m, i) => (
-        <motion.div key={m.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}
-          className={`glass-card rounded-xl p-4 flex items-center gap-3 ${m.completed_today ? 'opacity-60' : ''}`}>
-          <button onClick={() => handleComplete(m)} disabled={m.completed_today}
-            className={`w-8 h-8 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${m.completed_today ? 'bg-success border-success' : 'border-muted-foreground/30 hover:border-primary'}`}>
-            {m.completed_today && <Check size={14} className="text-primary-foreground" />}
-          </button>
-          <div className="flex-1 min-w-0">
-            <p className={`text-sm font-medium ${m.completed_today ? 'line-through text-muted-foreground' : 'text-foreground'}`}>{m.title}</p>
-            {m.description && <p className="text-xs text-muted-foreground truncate">{m.description}</p>}
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-muted text-muted-foreground">{t(`categories.${m.category}`)}</span>
-              <span className="text-[10px] text-primary font-medium">+{m.xp_reward} XP</span>
+      {missions.map((m, i) => {
+        const isPending = pendingId === m.id;
+        return (
+          <motion.div key={m.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}
+            className={`glass-card rounded-xl p-4 flex items-center gap-3 relative overflow-hidden ${m.completed_today ? 'opacity-60' : ''}`}>
+            {isPending && (
+              <div className="absolute bottom-0 left-0 h-1 bg-primary transition-all" style={{ width: `${progress}%` }} />
+            )}
+            <button onClick={() => startCooldown(m)} disabled={m.completed_today || isPending}
+              className={`w-8 h-8 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${m.completed_today ? 'bg-success border-success' : 'border-muted-foreground/30 hover:border-primary'}`}>
+              {m.completed_today && <Check size={14} className="text-primary-foreground" />}
+            </button>
+            <div className="flex-1 min-w-0">
+              <p className={`text-sm font-medium ${m.completed_today ? 'line-through text-muted-foreground' : 'text-foreground'}`}>{m.title}</p>
+              {m.description && <p className="text-xs text-muted-foreground truncate">{m.description}</p>}
+              <div className="flex items-center gap-2 mt-1">
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-muted text-muted-foreground">{t(`categories.${m.category}`)}</span>
+                <span className="text-[10px] text-primary font-medium">+{m.xp_reward} XP</span>
+                {isPending && (
+                  <span className="text-[10px] text-primary font-medium">
+                    {t('common.confirming')} {Math.ceil((COOLDOWN_MS - (progress / 100) * COOLDOWN_MS) / 1000)}s
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
-          <button onClick={() => handleDelete(m.id)} className="text-muted-foreground hover:text-destructive transition-colors"><Trash2 size={14} /></button>
-        </motion.div>
-      ))}
+            {isPending ? (
+              <button onClick={cancelCooldown} className="text-xs text-muted-foreground hover:text-destructive flex items-center gap-1">
+                <X size={12} /> {t('common.cancel')}
+              </button>
+            ) : (
+              <button onClick={() => handleDelete(m.id)} className="text-muted-foreground hover:text-destructive transition-colors"><Trash2 size={14} /></button>
+            )}
+          </motion.div>
+        );
+      })}
 
       {missions.length === 0 && !showForm && (
         <p className="text-xs text-muted-foreground text-center py-2">{t('customMissions.empty')}</p>
