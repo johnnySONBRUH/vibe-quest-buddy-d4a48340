@@ -25,7 +25,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 const Dashboard = () => {
   const { t } = useTranslation();
   const { signOut } = useAuth();
-  const { theme, toggleTheme } = useTheme();
+  void signOut;
   const { dailyMissions, profile, loading, completeMission, completedCount, totalCount, progressPercent, fetchProfile } = useMissions();
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('questup_onboarding_complete')
@@ -37,7 +37,7 @@ const Dashboard = () => {
   const [categoryFilter, setCategoryFilter] = useState('all');
 
   if (showLeaderboard) return <Leaderboard onBack={() => setShowLeaderboard(false)} />;
-  if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} />;
+  if (showSettings) return <ProfileSettings onBack={() => setShowSettings(false)} onOpenProgress={() => { setShowSettings(false); setShowProgress(true); }} onOpenHistory={() => { setShowSettings(false); setShowHistory(true); }} />;
   if (showHistory) return <MissionHistory onBack={() => setShowHistory(false)} />;
   if (showProgress) return <Progress onBack={() => setShowProgress(false)} />;
 
@@ -86,12 +86,8 @@ const Dashboard = () => {
           </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" onClick={() => setShowTutorial(true)} className="text-muted-foreground" aria-label="Tutorial"><HelpCircle size={20} /></Button>
-            <Button variant="ghost" size="icon" onClick={() => setShowHistory(true)} className="text-muted-foreground"><History size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowLeaderboard(true)} className="text-muted-foreground" aria-label="Leaderboard"><Crown size={20} /></Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="text-muted-foreground" aria-label="Toggle theme">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</Button>
-            <Button variant="ghost" size="icon" onClick={() => setShowProgress(true)} className="text-muted-foreground"><BarChart3 size={20} /></Button>
             <Button variant="ghost" size="icon" onClick={() => setShowSettings(true)} className="text-muted-foreground"><Settings size={20} /></Button>
-            <Button variant="ghost" size="icon" onClick={signOut} className="text-muted-foreground"><LogOut size={20} /></Button>
           </div>
         </motion.div>
 
