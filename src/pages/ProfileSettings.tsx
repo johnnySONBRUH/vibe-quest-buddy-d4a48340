@@ -1,20 +1,22 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Camera, User, Save, Loader2, Globe } from 'lucide-react';
+import { ArrowLeft, Camera, User, Save, Loader2, Globe, BarChart3, History, Sun, Moon, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
+import { useTheme } from '@/hooks/useTheme';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { useTranslation } from 'react-i18next';
 import { languages } from '@/i18n';
 
 
-const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
+const ProfileSettings = ({ onBack, onOpenProgress, onOpenHistory }: { onBack: () => void; onOpenProgress: () => void; onOpenHistory: () => void }) => {
   const { t, i18n } = useTranslation();
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [displayName, setDisplayName] = useState('');
@@ -133,6 +135,23 @@ const ProfileSettings = ({ onBack }: { onBack: () => void }) => {
               </button>
             ))}
           </div>
+        </motion.div>
+
+        {/* Quick Actions */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card rounded-2xl p-4 space-y-2">
+          <Button variant="ghost" onClick={onOpenProgress} className="w-full justify-start gap-3 h-12">
+            <BarChart3 size={18} className="text-primary" /> {t('progress.title')}
+          </Button>
+          <Button variant="ghost" onClick={onOpenHistory} className="w-full justify-start gap-3 h-12">
+            <History size={18} className="text-primary" /> {t('history.title')}
+          </Button>
+          <Button variant="ghost" onClick={toggleTheme} className="w-full justify-start gap-3 h-12">
+            {theme === 'dark' ? <Sun size={18} className="text-primary" /> : <Moon size={18} className="text-primary" />}
+            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+          </Button>
+          <Button variant="ghost" onClick={signOut} className="w-full justify-start gap-3 h-12 text-destructive hover:text-destructive">
+            <LogOut size={18} /> Sign Out
+          </Button>
         </motion.div>
 
         {/* Save */}
