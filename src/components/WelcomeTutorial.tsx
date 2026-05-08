@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, Target, Trophy, Sparkles, ChevronRight, ChevronLeft, Crown, CheckCircle, Calendar, Users, BarChart3 } from 'lucide-react';
+import { Flame, Target, Trophy, Sparkles, ChevronRight, ChevronLeft, Crown, CheckCircle, Calendar, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +16,6 @@ const WelcomeTutorial = ({ onComplete }: { onComplete: () => void }) => {
     { icon: Trophy, title: t('tutorial.streaks'), description: t('tutorial.streaksDesc') },
     { icon: BarChart3, title: t('tutorial.progress'), description: t('tutorial.progressDesc') },
     { icon: Crown, title: t('tutorial.leaderboard'), description: t('tutorial.leaderboardDesc') },
-    { icon: Users, title: t('tutorial.friends'), description: t('tutorial.friendsDesc') },
     { icon: Sparkles, title: t('tutorial.ai'), description: t('tutorial.aiDesc') },
   ];
 
