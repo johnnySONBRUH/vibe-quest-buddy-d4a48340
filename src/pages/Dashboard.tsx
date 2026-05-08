@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, LogOut, Trophy, Zap, BarChart3, History, Settings, Sun, Moon, Crown, HelpCircle } from 'lucide-react';
+import { Flame, Trophy, Zap, Settings, Crown, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useMissions } from '@/hooks/useMissions';
