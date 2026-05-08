@@ -118,9 +118,7 @@
     "progress": "Track Your Progress",
     "progressDesc": "Open the progress dashboard to see your XP, missions completed, and streak history over the past 7 days.",
     "leaderboard": "Climb the Ranks",
-    "leaderboardDesc": "Compete with other questers on the global leaderboard, ranked by total XP earned.",
-    "friends": "Connect with Friends",
-    "friendsDesc": "Add friends to follow their activity, cheer them on, and stay motivated together."
+    "leaderboardDesc": "Compete with other questers on the global leaderboard, ranked by total XP earned."
   },
   "ai": {
     "title": "QuestUp AI",
