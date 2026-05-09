@@ -365,5 +365,15 @@
       "Idea snek sihat",
       "Idea projek kreatif"
     ]
+  },
+  "theme": {
+    "title": "Tema",
+    "light": "Koral Cerah",
+    "dark": "Koral Gelap",
+    "ocean": "Lautan",
+    "forest": "Hutan",
+    "sunset": "Senja",
+    "midnight": "Tengah Malam",
+    "sakura": "Sakura"
   }
 }
