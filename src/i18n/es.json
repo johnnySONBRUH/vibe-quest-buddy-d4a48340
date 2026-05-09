@@ -365,5 +365,15 @@
       "Ideas de bocadillos saludables",
       "Ideas de proyectos creativos"
     ]
+  },
+  "theme": {
+    "title": "Tema",
+    "light": "Coral Claro",
+    "dark": "Coral Oscuro",
+    "ocean": "Océano",
+    "forest": "Bosque",
+    "sunset": "Atardecer",
+    "midnight": "Medianoche",
+    "sakura": "Sakura"
   }
 }

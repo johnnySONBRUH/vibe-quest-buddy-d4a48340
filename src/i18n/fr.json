@@ -365,5 +365,15 @@
       "Idées de collations saines",
       "Idées de projets créatifs"
     ]
+  },
+  "theme": {
+    "title": "Thème",
+    "light": "Corail Clair",
+    "dark": "Corail Sombre",
+    "ocean": "Océan",
+    "forest": "Forêt",
+    "sunset": "Coucher de Soleil",
+    "midnight": "Minuit",
+    "sakura": "Sakura"
   }
 }

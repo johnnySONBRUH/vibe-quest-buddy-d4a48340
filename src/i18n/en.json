@@ -365,5 +365,15 @@
       "Healthy snack ideas",
       "Creative project ideas"
     ]
+  },
+  "theme": {
+    "title": "Theme",
+    "light": "Coral Light",
+    "dark": "Coral Dark",
+    "ocean": "Ocean",
+    "forest": "Forest",
+    "sunset": "Sunset",
+    "midnight": "Midnight",
+    "sakura": "Sakura"
   }
 }
