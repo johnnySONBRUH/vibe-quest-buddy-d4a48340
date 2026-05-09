@@ -2,14 +2,14 @@ import { useSyncExternalStore } from 'react';
 
 export type Theme = 'light' | 'dark' | 'ocean' | 'forest' | 'sunset' | 'midnight' | 'sakura';
 
-export const THEMES: { id: Theme; label: string; isDark: boolean; swatch: string[] }[] = [
-  { id: 'light', label: 'Coral Light', isDark: false, swatch: ['#F5F6F8', '#F26A3A', '#7A6BE6'] },
-  { id: 'dark', label: 'Coral Dark', isDark: true, swatch: ['#0F1620', '#F26A3A', '#7A6BE6'] },
-  { id: 'ocean', label: 'Ocean', isDark: true, swatch: ['#0A1F2E', '#1FC3E6', '#3D7BE6'] },
-  { id: 'forest', label: 'Forest', isDark: true, swatch: ['#0F1F15', '#3DCC52', '#A6D633'] },
-  { id: 'sunset', label: 'Sunset', isDark: false, swatch: ['#FCEEDB', '#F25C25', '#E63D85'] },
-  { id: 'midnight', label: 'Midnight', isDark: true, swatch: ['#0E0A1A', '#B547F0', '#4D8CF0'] },
-  { id: 'sakura', label: 'Sakura', isDark: false, swatch: ['#FCEAF1', '#E63D75', '#B963D9'] },
+export const THEMES: { id: Theme; labelKey: string; isDark: boolean; swatch: string[] }[] = [
+  { id: 'light', labelKey: 'theme.light', isDark: false, swatch: ['#F5F6F8', '#F26A3A', '#7A6BE6'] },
+  { id: 'dark', labelKey: 'theme.dark', isDark: true, swatch: ['#0F1620', '#F26A3A', '#7A6BE6'] },
+  { id: 'ocean', labelKey: 'theme.ocean', isDark: true, swatch: ['#0A1F2E', '#1FC3E6', '#3D7BE6'] },
+  { id: 'forest', labelKey: 'theme.forest', isDark: true, swatch: ['#0F1F15', '#3DCC52', '#A6D633'] },
+  { id: 'sunset', labelKey: 'theme.sunset', isDark: false, swatch: ['#FCEEDB', '#F25C25', '#E63D85'] },
+  { id: 'midnight', labelKey: 'theme.midnight', isDark: true, swatch: ['#0E0A1A', '#B547F0', '#4D8CF0'] },
+  { id: 'sakura', labelKey: 'theme.sakura', isDark: false, swatch: ['#FCEAF1', '#E63D75', '#B963D9'] },
 ];
 
 const STORAGE_KEY = 'questup_theme';
