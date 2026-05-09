@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Camera, User, Save, Loader2, Globe, BarChart3, History, Sun, Moon, LogOut } from 'lucide-react';
+import { ArrowLeft, Camera, User, Save, Loader2, Globe, BarChart3, History, Sun, Moon, LogOut, Palette, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme, THEMES } from '@/hooks/useTheme';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { useTranslation } from 'react-i18next';
