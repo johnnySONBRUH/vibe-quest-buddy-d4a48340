@@ -137,6 +137,41 @@ const ProfileSettings = ({ onBack, onOpenProgress, onOpenHistory }: { onBack: ()
           </div>
         </motion.div>
 
+        {/* Theme Picker */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="glass-card rounded-2xl p-6 space-y-4">
+          <div className="flex items-center gap-2">
+            <Palette className="text-primary" size={20} />
+            <h3 className="text-base font-bold text-foreground">Theme</h3>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {THEMES.map((t) => {
+              const active = theme === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setTheme(t.id)}
+                  className={`relative flex flex-col gap-2 p-3 rounded-xl border-2 transition-all text-left ${
+                    active ? 'border-primary shadow-lg' : 'border-border hover:border-muted-foreground/40'
+                  }`}
+                  style={{ backgroundColor: t.swatch[0] }}
+                >
+                  <div className="flex gap-1.5">
+                    {t.swatch.slice(1).map((c, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full ring-2 ring-black/10" style={{ backgroundColor: c }} />
+                    ))}
+                    {active && (
+                      <div className="ml-auto w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                        <Check size={14} className="text-primary-foreground" />
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-xs font-semibold" style={{ color: t.isDark ? '#fff' : '#111' }}>{t.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+
         {/* Quick Actions */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card rounded-2xl p-4 space-y-2">
           <Button variant="ghost" onClick={onOpenProgress} className="w-full justify-start gap-3 h-12">
@@ -147,7 +182,7 @@ const ProfileSettings = ({ onBack, onOpenProgress, onOpenHistory }: { onBack: ()
           </Button>
           <Button variant="ghost" onClick={toggleTheme} className="w-full justify-start gap-3 h-12">
             {theme === 'dark' ? <Sun size={18} className="text-primary" /> : <Moon size={18} className="text-primary" />}
-            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            Quick toggle light/dark
           </Button>
           <Button variant="ghost" onClick={signOut} className="w-full justify-start gap-3 h-12 text-destructive hover:text-destructive">
             <LogOut size={18} /> Sign Out
