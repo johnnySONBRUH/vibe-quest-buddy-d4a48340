@@ -79,6 +79,131 @@
     --input: 220 20% 20%;
     --ring: 16 90% 58%;
   }
+
+  /* Theme: Ocean (dark teal/blue) */
+  [data-theme="ocean"] {
+    --background: 205 50% 8%;
+    --foreground: 195 30% 92%;
+    --card: 205 45% 12%;
+    --card-foreground: 195 30% 92%;
+    --popover: 205 45% 12%;
+    --popover-foreground: 195 30% 92%;
+    --primary: 190 85% 50%;
+    --primary-foreground: 205 50% 8%;
+    --secondary: 220 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 205 35% 18%;
+    --muted-foreground: 195 20% 70%;
+    --accent: 170 80% 50%;
+    --accent-foreground: 205 50% 8%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 205 30% 22%;
+    --input: 205 30% 22%;
+    --ring: 190 85% 50%;
+    --streak: 190 85% 55%;
+    --streak-glow: 190 100% 70%;
+  }
+
+  /* Theme: Forest (deep green) */
+  [data-theme="forest"] {
+    --background: 145 30% 8%;
+    --foreground: 90 20% 92%;
+    --card: 145 28% 12%;
+    --card-foreground: 90 20% 92%;
+    --popover: 145 28% 12%;
+    --popover-foreground: 90 20% 92%;
+    --primary: 130 60% 50%;
+    --primary-foreground: 145 30% 8%;
+    --secondary: 90 50% 50%;
+    --secondary-foreground: 145 30% 8%;
+    --muted: 145 22% 18%;
+    --muted-foreground: 90 15% 70%;
+    --accent: 60 80% 60%;
+    --accent-foreground: 145 30% 8%;
+    --destructive: 10 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 145 20% 22%;
+    --input: 145 20% 22%;
+    --ring: 130 60% 50%;
+    --streak: 35 95% 55%;
+    --streak-glow: 35 100% 70%;
+  }
+
+  /* Theme: Sunset (warm light) */
+  [data-theme="sunset"] {
+    --background: 30 60% 96%;
+    --foreground: 15 50% 15%;
+    --card: 30 80% 99%;
+    --card-foreground: 15 50% 15%;
+    --popover: 30 80% 99%;
+    --popover-foreground: 15 50% 15%;
+    --primary: 14 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 75% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 40% 88%;
+    --muted-foreground: 20 25% 40%;
+    --accent: 38 95% 55%;
+    --accent-foreground: 15 50% 15%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 25 40% 82%;
+    --input: 25 40% 82%;
+    --ring: 14 90% 55%;
+    --streak: 22 95% 55%;
+    --streak-glow: 22 100% 70%;
+  }
+
+  /* Theme: Midnight (deep purple) */
+  [data-theme="midnight"] {
+    --background: 260 40% 7%;
+    --foreground: 270 25% 92%;
+    --card: 260 38% 12%;
+    --card-foreground: 270 25% 92%;
+    --popover: 260 38% 12%;
+    --popover-foreground: 270 25% 92%;
+    --primary: 280 80% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 80% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 260 28% 18%;
+    --muted-foreground: 270 15% 70%;
+    --accent: 320 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 25% 22%;
+    --input: 260 25% 22%;
+    --ring: 280 80% 65%;
+    --streak: 320 80% 60%;
+    --streak-glow: 320 100% 75%;
+  }
+
+  /* Theme: Sakura (light pink) */
+  [data-theme="sakura"] {
+    --background: 340 60% 97%;
+    --foreground: 340 40% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 40% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 40% 18%;
+    --primary: 340 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 340 30% 92%;
+    --muted-foreground: 340 20% 40%;
+    --accent: 20 90% 65%;
+    --accent-foreground: 340 40% 18%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 340 30% 88%;
+    --input: 340 30% 88%;
+    --ring: 340 80% 60%;
+    --streak: 20 95% 60%;
+    --streak-glow: 20 100% 75%;
+  }
 }
 
 @layer base {
