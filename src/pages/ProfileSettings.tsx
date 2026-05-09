@@ -16,7 +16,7 @@ import { languages } from '@/i18n';
 const ProfileSettings = ({ onBack, onOpenProgress, onOpenHistory }: { onBack: () => void; onOpenProgress: () => void; onOpenHistory: () => void }) => {
   const { t, i18n } = useTranslation();
   const { user, signOut } = useAuth();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, setTheme } = useTheme();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [displayName, setDisplayName] = useState('');
